@@ -1,0 +1,144 @@
+1) Test case 1
+ 
+INPUT:
+This is a normal string
+
+OUTPUT:
+Word #1 is 'This'
+Word #2 is 'is'
+Word #3 is 'a'
+Word #4 is 'normal'
+Word #5 is 'string'
+
+2) Test case 2
+
+INPUT:
+""
+
+OUTPUT:
+""
+
+3) Test case 3
+
+INPUT:
+123 456 789
+
+OUTPUT:
+Word #1 is '123'
+Word #2 is '456'
+Word #3 is '789'
+
+4) Test case 4
+
+INPUT:
+This@string@ contains special@characters
+
+OUTPUT:
+Word #1 is 'This@string@'
+Word #2 is 'contains'
+Word #3 is 'special@characters'
+
+5) Test case 5
+
+INPUT:
+This           is a      normal              string
+
+OUTPUT:
+Word #1 is 'This'
+Word #2 is 'is'
+Word #3 is 'a'
+Word #4 is 'normal'
+Word #5 is 'string'
+
+6) Test case 6
+
+INPUT:
+q
+
+OUTPUT:
+*** End of Tokenizing Words Demo *** (Function Terminated)
+
+7) Test case 7
+
+INPUT:
+This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string
+
+OUTPUT: (See the wrong results below after word 55 where the buffer size exceeds the buffer size in code)
+Word #1 is 'This'
+Word #2 is 'is'
+Word #3 is 'normal'
+Word #4 is 'string'
+Word #5 is 'This'
+Word #6 is 'is'
+Word #7 is 'normal'
+Word #8 is 'string'
+Word #9 is 'This'
+Word #10 is 'is'
+Word #11 is 'normal'
+Word #12 is 'string'
+Word #13 is 'This'
+Word #14 is 'is'
+Word #15 is 'normal'
+Word #16 is 'string'
+Word #17 is 'This'
+Word #18 is 'is'
+Word #19 is 'normal'
+Word #20 is 'string'
+Word #21 is 'This'
+Word #22 is 'is'
+Word #23 is 'normal'
+Word #24 is 'string'
+Word #25 is 'This'
+Word #26 is 'is'
+Word #27 is 'normal'
+Word #28 is 'string'
+Word #29 is 'This'
+Word #30 is 'is'
+Word #31 is 'normal'
+Word #32 is 'string'
+Word #33 is 'This'
+Word #34 is 'is'
+Word #35 is 'normal'
+Word #36 is 'string'
+Word #37 is 'This'
+Word #38 is 'is'
+Word #39 is 'normal'
+Word #40 is 'string'
+Word #41 is 'This'
+Word #42 is 'is'
+Word #43 is 'normal'
+Word #44 is 'string'
+Word #45 is 'This'
+Word #46 is 'is'
+Word #47 is 'normal'
+Word #48 is 'string'
+Word #49 is 'This'
+Word #50 is 'is'
+Word #51 is 'normal'
+Word #52 is 'string'
+Word #53 is 'This'
+Word #54 is 'is'
+Word #55 is 'norm'
+Type a few words separated by space (q - to quit):
+Word #1 is 'l'
+Word #2 is 'string'
+Word #3 is 'This'
+Word #4 is 'is'
+Word #5 is 'normal'
+Word #6 is 'string'
+Word #7 is 'This'
+Word #8 is 'is'
+Word #9 is 'normal'
+Word #10 is 'string'
+Word #11 is 'This'
+Word #12 is 'is'
+Word #13 is 'normal'
+Word #14 is 'string'
+Word #15 is 'This'
+Word #16 is 'is'
+Word #17 is 'normal'
+Word #18 is 'string'
+Word #19 is 'This'
+Word #20 is 'is'
+Word #21 is 'normal'
+Word #22 is 'string'
