@@ -1,0 +1,234 @@
+The input and output for all the test cases for version 1 mentioned in excel
+
+1) Test case 1
+ 
+INPUT:
+hi,this is a normal string with comma,between different phrases
+
+OUTPUT:
+Phrase #1 is 'hi'
+        word #1 is 'hi'
+Phrase #2 is 'this is a normal string with comma'
+        word #2 is 'this'
+        word #3 is 'is'
+        word #4 is 'a'
+        word #5 is 'normal'
+        word #6 is 'string'
+        word #7 is 'with'
+        word #8 is 'comma'
+Phrase #3 is 'between different phrases'
+        word #9 is 'between'
+        word #10 is 'different'
+        word #11 is 'phrases'
+
+2) Test case 2
+
+INPUT:
+""
+
+OUTPUT:
+""
+
+3) Test case 3
+
+INPUT:
+123,345 554,323
+
+OUTPUT:
+Phrase #1 is '123'
+        word #1 is '123'
+Phrase #2 is '345 554'
+        word #2 is '345'
+        word #3 is '554'
+Phrase #3 is '323'
+        word #4 is '323'
+
+4) Test case 4
+
+INPUT:
+This@string@, contains few,special@characters between different commas
+
+OUTPUT:
+Phrase #1 is 'This@string@'
+        word #1 is 'This@string@'
+Phrase #2 is ' contains few'
+        word #2 is 'contains'
+        word #3 is 'few'
+Phrase #3 is 'special@characters between different commas'
+        word #4 is 'special@characters'
+        word #5 is 'between'
+        word #6 is 'different'
+        word #7 is 'commas'
+
+5) Test case 5
+
+INPUT:
+hi,,there are two commas,two times in this string
+
+OUTPUT:
+Phrase #1 is 'hi'
+        word #1 is 'hi'
+Phrase #2 is 'there are two commas'
+        word #2 is 'there'
+        word #3 is 'are'
+        word #4 is 'two'
+        word #5 is 'commas'
+Phrase #3 is 'two times in this string'
+        word #6 is 'two'
+        word #7 is 'times'
+        word #8 is 'in'
+        word #9 is 'this'
+        word #10 is 'string'
+
+6) Test case 6
+
+INPUT:
+hi,,there are two commas,two times in this string,with multiple spaces          before this and      this
+
+OUTPUT:
+Phrase #1 is 'hi'
+        word #1 is 'hi'
+Phrase #2 is 'there are two commas'
+        word #2 is 'there'
+        word #3 is 'are'
+        word #4 is 'two'
+        word #5 is 'commas'
+Phrase #3 is 'two times in this string'
+        word #6 is 'two'
+        word #7 is 'times'
+        word #8 is 'in'
+        word #9 is 'this'
+        word #10 is 'string'
+Phrase #4 is 'with multiple spaces          before this and      this'
+        word #11 is 'with'
+        word #12 is 'multiple'
+        word #13 is 'spaces'
+        word #14 is 'before'
+        word #15 is 'this'
+        word #16 is 'and'
+        word #17 is 'this'
+
+7) Test case 7
+
+INPUT:
+q
+
+OUTPUT:
+*** End of Tokenizing Words Demo *** (Function Terminated)
+
+8) Test case 8
+
+INPUT:
+this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code
+
+OUTPUT: (Notice the wrong results after word 51 in phrase 1 where the buffer size exceeds the buffer size in code)
+Phrase #1 is 'this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string ex'
+        word #1 is 'this'
+        word #2 is 'will'
+        word #3 is 'overflow'
+        word #4 is 'the'
+        word #5 is 'buffer'
+        word #6 is 'because'
+        word #7 is 'this'
+        word #8 is 'string'
+        word #9 is 'exceeds'
+        word #10 is 'the'
+        word #11 is 'buffer'
+        word #12 is 'size'
+        word #13 is 'in'
+        word #14 is 'code'
+        word #15 is 'this'
+        word #16 is 'will'
+        word #17 is 'overflow'
+        word #18 is 'the'
+        word #19 is 'buffer'
+        word #20 is 'because'
+        word #21 is 'this'
+        word #22 is 'string'
+        word #23 is 'exceeds'
+        word #24 is 'the'
+        word #25 is 'buffer'
+        word #26 is 'size'
+        word #27 is 'in'
+        word #28 is 'code'
+        word #29 is 'this'
+        word #30 is 'will'
+        word #31 is 'overflow'
+        word #32 is 'the'
+        word #33 is 'buffer'
+        word #34 is 'because'
+        word #35 is 'this'
+        word #36 is 'string'
+        word #37 is 'exceeds'
+        word #38 is 'the'
+        word #39 is 'buffer'
+        word #40 is 'size'
+        word #41 is 'in'
+        word #42 is 'code'
+        word #43 is 'this'
+        word #44 is 'will'
+        word #45 is 'overflow'
+        word #46 is 'the'
+        word #47 is 'buffer'
+        word #48 is 'because'
+        word #49 is 'this'
+        word #50 is 'string'
+        word #51 is 'ex'
+
+Type a few Phrases separated by comma with words separated by space (q - to quit):
+Phrase #1 is 'eeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code'
+        word #1 is 'eeds'
+        word #2 is 'the'
+        word #3 is 'buffer'
+        word #4 is 'size'
+        word #5 is 'in'
+        word #6 is 'code'
+        word #7 is 'this'
+        word #8 is 'will'
+        word #9 is 'overflow'
+        word #10 is 'the'
+        word #11 is 'buffer'
+        word #12 is 'because'
+        word #13 is 'this'
+        word #14 is 'string'
+        word #15 is 'exceeds'
+        word #16 is 'the'
+        word #17 is 'buffer'
+        word #18 is 'size'
+        word #19 is 'in'
+        word #20 is 'code'
+
+9) Test Case 9
+
+INPUT:
+thiswillincreasethebuffersieforthiswords,thiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswords
+
+OUTPUT: (Notice the wrong results after phrase 2 where the buffer size for a word exceeds the buffer size in code)
+Phrase #1 is 'thiswillincreasethebuffersieforthiswords'
+        word #1 is 'thiswillincreasethebuffersieforthiswords'
+Phrase #2 is 'thiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreaset'
+        word #2 is 'thiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreaset'
+
+Type a few Phrases separated by comma with words separated by space (q - to quit):
+Phrase #1 is 'ebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswords'
+        word #1 is 'ebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswords'
+
+10) Test Case 10
+
+INPUT:
+hi,,there are two commas,two times in this string,
+
+OUTPUT:
+Phrase #1 is 'hi'
+        word #1 is 'hi'
+Phrase #2 is 'there are two commas'
+        word #2 is 'there'
+        word #3 is 'are'
+        word #4 is 'two'
+        word #5 is 'commas'
+Phrase #3 is 'two times in this string'
+        word #6 is 'two'
+        word #7 is 'times'
+        word #8 is 'in'
+        word #9 is 'this'
+        word #10 is 'string'

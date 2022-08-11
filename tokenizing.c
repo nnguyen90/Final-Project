@@ -1,3 +1,12 @@
+/*
+-------------------------------------------------
+Full Name  : Ngoc Diem Thy Nguyen
+Student ID#: 105310221
+Email      : nnguyen90@myseneca.ca
+Section    : NEE
+-------------------------------------------------
+*/
+
 // TOKENIZING MODULE SOURCE
 #define _CRT_SECURE_NO_WARNINGS
 #define BUFFER_SIZE 300           
@@ -27,8 +36,4 @@ void tokenizing(void)
 		}
 	}while (strcmp(words, "q") != 0);           
 	printf ("*** End of Tokenizing Words Demo ***\n\n");					
-}
-int main()           // Main function to run the code
-{
-	tokenizing();    
 }
