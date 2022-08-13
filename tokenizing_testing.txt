@@ -1,0 +1,51 @@
+Microsoft Windows [Version 10.0.19044.1889]
+(c) Microsoft Corporation. All rights reserved.
+C:\Users\nguye\Documents\CPR101\Final Project\Final Project>token
+*** Start of Tokenizing Phrases Demo ***
+Type a few Phrases separated by comma (q - to quit):
+hi,this is a normal string with comma,between different phrases
+Phrase #1 is 'hi'
+Phrase #2 is 'this is a normal string with comma'
+Phrase #3 is 'between different phrases'
+Type a few Phrases separated by comma (q - to quit):
+
+Type a few Phrases separated by comma (q - to quit):
+123,345 554,323
+Phrase #1 is '123'
+Phrase #2 is '345 554'
+Phrase #3 is '323'
+Type a few Phrases separated by comma (q - to quit):
+This@string@, contains few,special@characters between different commas
+Phrase #1 is 'This@string@'
+Phrase #2 is ' contains few'
+Phrase #3 is 'special@characters between different commas'
+Type a few Phrases separated by comma (q - to quit):
+hi,,there are two commas,two times in this string
+Phrase #1 is 'hi'
+Phrase #2 is 'there are two commas'
+Phrase #3 is 'two times in this string'
+Type a few Phrases separated by comma (q - to quit):
+hi,,there are two commas,two times in this string,with multiple spaces          before this and      this
+Phrase #1 is 'hi'
+Phrase #2 is 'there are two commas'
+Phrase #3 is 'two times in this string'
+Phrase #4 is 'with multiple spaces          before this and      this'
+Type a few Phrases separated by comma (q - to quit):
+this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code
+Phrase #1 is 'this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string ex'
+Type a few Phrases separated by comma (q - to quit):
+Phrase #1 is 'eeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code'
+Type a few Phrases separated by comma (q - to quit):
+thiswillincreasethebuffersieforthiswords,thiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswords
+Phrase #1 is 'thiswillincreasethebuffersieforthiswords'
+Phrase #2 is 'thiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreaset'
+Type a few Phrases separated by comma (q - to quit):
+Phrase #1 is 'ebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswords'
+Type a few Phrases separated by comma (q - to quit):
+hi,,there are two commas,two times in this string,
+Phrase #1 is 'hi'
+Phrase #2 is 'there are two commas'
+Phrase #3 is 'two times in this string'
+Type a few Phrases separated by comma (q - to quit):
+q
+*** End of Tokenizing Phrases Demo ***

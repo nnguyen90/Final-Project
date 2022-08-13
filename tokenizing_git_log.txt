@@ -1,0 +1,33 @@
+nguye@LAPTOP-1IUI7EAN MINGW64 ~/Documents/CPR101/Final Project/Final Project (master)
+$ git status
+On branch master
+Your branch is up to date with 'Final_Project/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   tokenizing_v2.c
+        modified:   tokenizing_v2.h
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        tokenizing version 2/
+        tokenizing_both_functions_separated.c
+        tokenizing_v2_combine 2 versions.c
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+nguye@LAPTOP-1IUI7EAN MINGW64 ~/Documents/CPR101/Final Project/Final Project (master)
+$ git log
+commit f64bf9d2510a54c5781d9a205fa8c25ab52b2c28 (HEAD -> master, Final_Project/master)
+Author: Thy <nguyen.thy2986@gmail.com>
+Date:   Thu Aug 11 13:09:39 2022 -0400
+
+    version_2
+
+commit 29ad9a407ae67e3d662c30eac36ab48ab355a36e
+Author: Thy <nguyen.thy2986@gmail.com>
+Date:   Wed Aug 3 11:22:05 2022 -0400
+
+    “version_1”
+
