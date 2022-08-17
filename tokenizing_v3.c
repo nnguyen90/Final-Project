@@ -11,7 +11,7 @@ Section    : NEE
 
 #define _CRT_SECURE_NO_WARNINGS // _CRT_SECURE_NO_WARNINGS means you don't want the compiler to suggest the secure versions of the library functions, e.g. scanf_s when you use scanf
 #define BUFFER_SIZE 300
-#include "tokenizing_v2.h" // Include header file created as "tokenizing.h"
+#include "tokenizing.h" // Include header file created as "tokenizing.h"
 
 void tokenizing(void) 
 {
@@ -84,7 +84,7 @@ void tokenizing(void)
 			}
 		}
 	} while (strcmp(sentences, "q") != 0); 
-	printf("*** End of Tokenizing Phrases Demo ***\n\n"); 
+	printf("*** End of Tokenizing Sentences Demo ***\n\n"); 
 
 	
 }

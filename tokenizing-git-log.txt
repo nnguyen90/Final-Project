@@ -1,0 +1,3933 @@
+commit 57b986e88d70c10b3edb9928efa19f834434d26d
+Author: Thy <nguyen.thy2986@gmail.com>
+Date:   Wed Aug 17 13:18:45 2022 -0400
+
+    version_3
+
+diff --git a/.vs/Final Project/v17/.suo b/.vs/Final Project/v17/.suo
+index 35cfa7e..945618e 100644
+Binary files a/.vs/Final Project/v17/.suo and b/.vs/Final Project/v17/.suo differ
+diff --git a/.vs/Final Project/v17/Browse.VC.db b/.vs/Final Project/v17/Browse.VC.db
+index 7f634bd..f786061 100644
+Binary files a/.vs/Final Project/v17/Browse.VC.db and b/.vs/Final Project/v17/Browse.VC.db differ
+diff --git a/.vs/Final Project/v17/Browse.VC.db-shm b/.vs/Final Project/v17/Browse.VC.db-shm
+deleted file mode 100644
+index 4e3571e..0000000
+Binary files a/.vs/Final Project/v17/Browse.VC.db-shm and /dev/null differ
+diff --git a/.vs/Final Project/v17/Browse.VC.db-wal b/.vs/Final Project/v17/Browse.VC.db-wal
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/.vs/Final Project/v17/ipch/AutoPCH/1834024c2cb122c1/MAIN.ipch b/.vs/Final Project/v17/ipch/AutoPCH/1834024c2cb122c1/MAIN.ipch
+new file mode 100644
+index 0000000..2c9220e
+Binary files /dev/null and b/.vs/Final Project/v17/ipch/AutoPCH/1834024c2cb122c1/MAIN.ipch differ
+diff --git a/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch b/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch
+index a304b6c..5e5c59b 100644
+Binary files a/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch and b/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch differ
+diff --git a/.vs/Final Project/v17/ipch/AutoPCH/d774b225d39bd4fd/TOKENIZING_V2.ipch b/.vs/Final Project/v17/ipch/AutoPCH/d774b225d39bd4fd/TOKENIZING_V2.ipch
+new file mode 100644
+index 0000000..8c54976
+Binary files /dev/null and b/.vs/Final Project/v17/ipch/AutoPCH/d774b225d39bd4fd/TOKENIZING_V2.ipch differ
+diff --git a/.vs/Final Project/v17/ipch/AutoPCH/e0ea1325d9310dde/TOKENIZING_V3.ipch b/.vs/Final Project/v17/ipch/AutoPCH/e0ea1325d9310dde/TOKENIZING_V3.ipch
+new file mode 100644
+index 0000000..bc6748e
+Binary files /dev/null and b/.vs/Final Project/v17/ipch/AutoPCH/e0ea1325d9310dde/TOKENIZING_V3.ipch differ
+diff --git a/Final Project.sln b/Final Project.sln
+new file mode 100644
+index 0000000..baa7329
+--- /dev/null
++++ b/Final Project.sln	
+@@ -0,0 +1,31 @@
++﻿
++Microsoft Visual Studio Solution File, Format Version 12.00
++# Visual Studio Version 17
++VisualStudioVersion = 17.1.32421.90
++MinimumVisualStudioVersion = 10.0.40219.1
++Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Final Project", "Final Project.vcxproj", "{DF863CD6-2967-4BC1-8241-09F8EB15ACAF}"
++EndProject
++Global
++	GlobalSection(SolutionConfigurationPlatforms) = preSolution
++		Debug|x64 = Debug|x64
++		Debug|x86 = Debug|x86
++		Release|x64 = Release|x64
++		Release|x86 = Release|x86
++	EndGlobalSection
++	GlobalSection(ProjectConfigurationPlatforms) = postSolution
++		{DF863CD6-2967-4BC1-8241-09F8EB15ACAF}.Debug|x64.ActiveCfg = Debug|x64
++		{DF863CD6-2967-4BC1-8241-09F8EB15ACAF}.Debug|x64.Build.0 = Debug|x64
++		{DF863CD6-2967-4BC1-8241-09F8EB15ACAF}.Debug|x86.ActiveCfg = Debug|Win32
++		{DF863CD6-2967-4BC1-8241-09F8EB15ACAF}.Debug|x86.Build.0 = Debug|Win32
++		{DF863CD6-2967-4BC1-8241-09F8EB15ACAF}.Release|x64.ActiveCfg = Release|x64
++		{DF863CD6-2967-4BC1-8241-09F8EB15ACAF}.Release|x64.Build.0 = Release|x64
++		{DF863CD6-2967-4BC1-8241-09F8EB15ACAF}.Release|x86.ActiveCfg = Release|Win32
++		{DF863CD6-2967-4BC1-8241-09F8EB15ACAF}.Release|x86.Build.0 = Release|Win32
++	EndGlobalSection
++	GlobalSection(SolutionProperties) = preSolution
++		HideSolutionNode = FALSE
++	EndGlobalSection
++	GlobalSection(ExtensibilityGlobals) = postSolution
++		SolutionGuid = {692879B8-BDA4-4C37-A2BE-5B2F06420A9D}
++	EndGlobalSection
++EndGlobal
+diff --git a/Final Project.vcxproj b/Final Project.vcxproj
+index 185ce6d..7d84d31 100644
+--- a/Final Project.vcxproj	
++++ b/Final Project.vcxproj	
+@@ -19,11 +19,11 @@
+     </ProjectConfiguration>
+   </ItemGroup>
+   <ItemGroup>
+-    <ClCompile Include="main.c" />
+-    <ClCompile Include="tokenizing.c" />
++    <ClInclude Include="tokenizing.h" />
+   </ItemGroup>
+   <ItemGroup>
+-    <ClInclude Include="tokenizing.h" />
++    <ClCompile Include="main.c" />
++    <ClCompile Include="tokenizing_v3.c" />
+   </ItemGroup>
+   <PropertyGroup Label="Globals">
+     <VCProjectVersion>16.0</VCProjectVersion>
+diff --git a/Final Project.vcxproj.filters b/Final Project.vcxproj.filters
+index 43caeb2..9892e3c 100644
+--- a/Final Project.vcxproj.filters	
++++ b/Final Project.vcxproj.filters	
+@@ -11,16 +11,16 @@
+     </Filter>
+   </ItemGroup>
+   <ItemGroup>
+-    <ClCompile Include="tokenizing.c">
++    <ClInclude Include="tokenizing.h">
++      <Filter>Header Files</Filter>
++    </ClInclude>
++  </ItemGroup>
++  <ItemGroup>
++    <ClCompile Include="main.c">
+       <Filter>Resource Files</Filter>
+     </ClCompile>
+-    <ClCompile Include="main.c">
++    <ClCompile Include="tokenizing_v3.c">
+       <Filter>Resource Files</Filter>
+     </ClCompile>
+   </ItemGroup>
+-  <ItemGroup>
+-    <ClInclude Include="tokenizing.h">
+-      <Filter>Header Files</Filter>
+-    </ClInclude>
+-  </ItemGroup>
+ </Project>
+\ No newline at end of file
+diff --git a/complete_git_log.txt b/complete_git_log.txt
+new file mode 100644
+index 0000000..31ed331
+--- /dev/null
++++ b/complete_git_log.txt
+@@ -0,0 +1,1678 @@
++commit d0b20202936108535966a53f1dcc216e25321afd
++Author: Thy <nguyen.thy2986@gmail.com>
++Date:   Fri Aug 12 22:50:13 2022 -0400
++
++    version_2
++
++diff --git a/main.exe b/main.exe
++deleted file mode 100644
++index b8296fa..0000000
++Binary files a/main.exe and /dev/null differ
++diff --git a/tokenizing version 2/tokenizing version 2.vcxproj b/tokenizing version 2/tokenizing version 2.vcxproj
++new file mode 100644
++index 0000000..e9c583e
++--- /dev/null
+++++ b/tokenizing version 2/tokenizing version 2.vcxproj	
++@@ -0,0 +1,150 @@
+++<?xml version="1.0" encoding="utf-8"?>
+++<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+++  <ItemGroup Label="ProjectConfigurations">
+++    <ProjectConfiguration Include="Debug|Win32">
+++      <Configuration>Debug</Configuration>
+++      <Platform>Win32</Platform>
+++    </ProjectConfiguration>
+++    <ProjectConfiguration Include="Release|Win32">
+++      <Configuration>Release</Configuration>
+++      <Platform>Win32</Platform>
+++    </ProjectConfiguration>
+++    <ProjectConfiguration Include="Debug|x64">
+++      <Configuration>Debug</Configuration>
+++      <Platform>x64</Platform>
+++    </ProjectConfiguration>
+++    <ProjectConfiguration Include="Release|x64">
+++      <Configuration>Release</Configuration>
+++      <Platform>x64</Platform>
+++    </ProjectConfiguration>
+++  </ItemGroup>
+++  <PropertyGroup Label="Globals">
+++    <VCProjectVersion>16.0</VCProjectVersion>
+++    <Keyword>Win32Proj</Keyword>
+++    <ProjectGuid>{c257fda0-6031-4c3e-b1ba-ec316908f02e}</ProjectGuid>
+++    <RootNamespace>tokenizingversion2</RootNamespace>
+++    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+++  </PropertyGroup>
+++  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+++    <ConfigurationType>Application</ConfigurationType>
+++    <UseDebugLibraries>true</UseDebugLibraries>
+++    <PlatformToolset>v143</PlatformToolset>
+++    <CharacterSet>Unicode</CharacterSet>
+++  </PropertyGroup>
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+++    <ConfigurationType>Application</ConfigurationType>
+++    <UseDebugLibraries>false</UseDebugLibraries>
+++    <PlatformToolset>v143</PlatformToolset>
+++    <WholeProgramOptimization>true</WholeProgramOptimization>
+++    <CharacterSet>Unicode</CharacterSet>
+++  </PropertyGroup>
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+++    <ConfigurationType>Application</ConfigurationType>
+++    <UseDebugLibraries>true</UseDebugLibraries>
+++    <PlatformToolset>v143</PlatformToolset>
+++    <CharacterSet>Unicode</CharacterSet>
+++  </PropertyGroup>
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+++    <ConfigurationType>Application</ConfigurationType>
+++    <UseDebugLibraries>false</UseDebugLibraries>
+++    <PlatformToolset>v143</PlatformToolset>
+++    <WholeProgramOptimization>true</WholeProgramOptimization>
+++    <CharacterSet>Unicode</CharacterSet>
+++  </PropertyGroup>
+++  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+++  <ImportGroup Label="ExtensionSettings">
+++  </ImportGroup>
+++  <ImportGroup Label="Shared">
+++  </ImportGroup>
+++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+++  </ImportGroup>
+++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+++  </ImportGroup>
+++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+++  </ImportGroup>
+++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+++  </ImportGroup>
+++  <PropertyGroup Label="UserMacros" />
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+++    <LinkIncremental>true</LinkIncremental>
+++  </PropertyGroup>
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+++    <LinkIncremental>false</LinkIncremental>
+++  </PropertyGroup>
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+++    <LinkIncremental>true</LinkIncremental>
+++  </PropertyGroup>
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+++    <LinkIncremental>false</LinkIncremental>
+++  </PropertyGroup>
+++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+++    <ClCompile>
+++      <WarningLevel>Level3</WarningLevel>
+++      <SDLCheck>true</SDLCheck>
+++      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+++      <ConformanceMode>true</ConformanceMode>
+++    </ClCompile>
+++    <Link>
+++      <SubSystem>Console</SubSystem>
+++      <GenerateDebugInformation>true</GenerateDebugInformation>
+++    </Link>
+++  </ItemDefinitionGroup>
+++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+++    <ClCompile>
+++      <WarningLevel>Level3</WarningLevel>
+++      <FunctionLevelLinking>true</FunctionLevelLinking>
+++      <IntrinsicFunctions>true</IntrinsicFunctions>
+++      <SDLCheck>true</SDLCheck>
+++      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+++      <ConformanceMode>true</ConformanceMode>
+++    </ClCompile>
+++    <Link>
+++      <SubSystem>Console</SubSystem>
+++      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+++      <OptimizeReferences>true</OptimizeReferences>
+++      <GenerateDebugInformation>true</GenerateDebugInformation>
+++    </Link>
+++  </ItemDefinitionGroup>
+++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+++    <ClCompile>
+++      <WarningLevel>Level3</WarningLevel>
+++      <SDLCheck>true</SDLCheck>
+++      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+++      <ConformanceMode>true</ConformanceMode>
+++    </ClCompile>
+++    <Link>
+++      <SubSystem>Console</SubSystem>
+++      <GenerateDebugInformation>true</GenerateDebugInformation>
+++    </Link>
+++  </ItemDefinitionGroup>
+++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+++    <ClCompile>
+++      <WarningLevel>Level3</WarningLevel>
+++      <FunctionLevelLinking>true</FunctionLevelLinking>
+++      <IntrinsicFunctions>true</IntrinsicFunctions>
+++      <SDLCheck>true</SDLCheck>
+++      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+++      <ConformanceMode>true</ConformanceMode>
+++    </ClCompile>
+++    <Link>
+++      <SubSystem>Console</SubSystem>
+++      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+++      <OptimizeReferences>true</OptimizeReferences>
+++      <GenerateDebugInformation>true</GenerateDebugInformation>
+++    </Link>
+++  </ItemDefinitionGroup>
+++  <ItemGroup>
+++    <ClInclude Include="..\tokenizing_v2.h" />
+++  </ItemGroup>
+++  <ItemGroup>
+++    <ClCompile Include="..\tokenizing_v2.c" />
+++  </ItemGroup>
+++  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+++  <ImportGroup Label="ExtensionTargets">
+++  </ImportGroup>
+++</Project>
++\ No newline at end of file
++diff --git a/tokenizing version 2/tokenizing version 2.vcxproj.filters b/tokenizing version 2/tokenizing version 2.vcxproj.filters
++new file mode 100644
++index 0000000..2fb57fd
++--- /dev/null
+++++ b/tokenizing version 2/tokenizing version 2.vcxproj.filters	
++@@ -0,0 +1,27 @@
+++﻿<?xml version="1.0" encoding="utf-8"?>
+++<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+++  <ItemGroup>
+++    <Filter Include="Source Files">
+++      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+++      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+++    </Filter>
+++    <Filter Include="Header Files">
+++      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+++      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+++    </Filter>
+++    <Filter Include="Resource Files">
+++      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+++      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+++    </Filter>
+++  </ItemGroup>
+++  <ItemGroup>
+++    <ClInclude Include="..\tokenizing_v2.h">
+++      <Filter>Header Files</Filter>
+++    </ClInclude>
+++  </ItemGroup>
+++  <ItemGroup>
+++    <ClCompile Include="..\tokenizing_v2.c">
+++      <Filter>Source Files</Filter>
+++    </ClCompile>
+++  </ItemGroup>
+++</Project>
++\ No newline at end of file
++diff --git a/tokenizing version 2/tokenizing version 2.vcxproj.user b/tokenizing version 2/tokenizing version 2.vcxproj.user
++new file mode 100644
++index 0000000..88a5509
++--- /dev/null
+++++ b/tokenizing version 2/tokenizing version 2.vcxproj.user	
++@@ -0,0 +1,4 @@
+++﻿<?xml version="1.0" encoding="utf-8"?>
+++<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+++  <PropertyGroup />
+++</Project>
++\ No newline at end of file
++diff --git a/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.command.1.tlog b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.command.1.tlog
++new file mode 100644
++index 0000000..efe10ea
++Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.command.1.tlog differ
++diff --git a/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.read.1.tlog b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.read.1.tlog
++new file mode 100644
++index 0000000..f68239a
++Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.read.1.tlog differ
++diff --git a/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.write.1.tlog b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.write.1.tlog
++new file mode 100644
++index 0000000..34b35fd
++Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.write.1.tlog differ
++diff --git a/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.command.1.tlog b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.command.1.tlog
++new file mode 100644
++index 0000000..b0e1623
++Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.command.1.tlog differ
++diff --git a/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.read.1.tlog b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.read.1.tlog
++new file mode 100644
++index 0000000..8fb4010
++Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.read.1.tlog differ
++diff --git a/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.write.1.tlog b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.write.1.tlog
++new file mode 100644
++index 0000000..ba6a541
++Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.write.1.tlog differ
++diff --git a/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/tokenizing version 2.lastbuildstate b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/tokenizing version 2.lastbuildstate
++new file mode 100644
++index 0000000..e99e944
++--- /dev/null
+++++ b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/tokenizing version 2.lastbuildstate	
++@@ -0,0 +1,2 @@
+++PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.31.31103:TargetPlatformVersion=10.0.19041.0:
+++Debug|x64|C:\Users\nguye\Documents\CPR101\Final Project\Final Project\tokenizing version 2\|
++diff --git a/tokenizing version 2/x64/Debug/tokenizing version 2.exe b/tokenizing version 2/x64/Debug/tokenizing version 2.exe
++new file mode 100644
++index 0000000..69a4157
++Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizing version 2.exe differ
++diff --git a/tokenizing version 2/x64/Debug/tokenizing version 2.exe.recipe b/tokenizing version 2/x64/Debug/tokenizing version 2.exe.recipe
++new file mode 100644
++index 0000000..6ada4d2
++--- /dev/null
+++++ b/tokenizing version 2/x64/Debug/tokenizing version 2.exe.recipe	
++@@ -0,0 +1,11 @@
+++﻿<?xml version="1.0" encoding="utf-8"?>
+++<Project>
+++  <ProjectOutputs>
+++    <ProjectOutput>
+++      <FullPath>C:\Users\nguye\Documents\CPR101\Final Project\Final Project\tokenizing version 2\x64\Debug\tokenizing version 2.exe</FullPath>
+++    </ProjectOutput>
+++  </ProjectOutputs>
+++  <ContentFiles />
+++  <SatelliteDlls />
+++  <NonRecipeFileRefs />
+++</Project>
++\ No newline at end of file
++diff --git a/tokenizing version 2/x64/Debug/tokenizing version 2.ilk b/tokenizing version 2/x64/Debug/tokenizing version 2.ilk
++new file mode 100644
++index 0000000..2898963
++Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizing version 2.ilk differ
++diff --git a/tokenizing version 2/x64/Debug/tokenizing version 2.log b/tokenizing version 2/x64/Debug/tokenizing version 2.log
++new file mode 100644
++index 0000000..b391236
++--- /dev/null
+++++ b/tokenizing version 2/x64/Debug/tokenizing version 2.log	
++@@ -0,0 +1,2 @@
+++﻿  tokenizing_v2.c
+++  tokenizing version 2.vcxproj -> C:\Users\nguye\Documents\CPR101\Final Project\Final Project\tokenizing version 2\x64\Debug\tokenizing version 2.exe
++diff --git a/tokenizing version 2/x64/Debug/tokenizing version 2.pdb b/tokenizing version 2/x64/Debug/tokenizing version 2.pdb
++new file mode 100644
++index 0000000..70c0e75
++Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizing version 2.pdb differ
++diff --git a/tokenizing version 2/x64/Debug/tokenizing version 2.vcxproj.FileListAbsolute.txt b/tokenizing version 2/x64/Debug/tokenizing version 2.vcxproj.FileListAbsolute.txt
++new file mode 100644
++index 0000000..34f421d
++--- /dev/null
+++++ b/tokenizing version 2/x64/Debug/tokenizing version 2.vcxproj.FileListAbsolute.txt	
++@@ -0,0 +1 @@
+++C:\Users\nguye\Documents\CPR101\Final Project\Final Project\tokenizing version 2\x64\Debug\tokenizing version 2.exe
++diff --git a/tokenizing version 2/x64/Debug/tokenizing_v2.obj b/tokenizing version 2/x64/Debug/tokenizing_v2.obj
++new file mode 100644
++index 0000000..3e65243
++Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizing_v2.obj differ
++diff --git a/tokenizing version 2/x64/Debug/vc143.idb b/tokenizing version 2/x64/Debug/vc143.idb
++new file mode 100644
++index 0000000..c9ee59d
++Binary files /dev/null and b/tokenizing version 2/x64/Debug/vc143.idb differ
++diff --git a/tokenizing version 2/x64/Debug/vc143.pdb b/tokenizing version 2/x64/Debug/vc143.pdb
++new file mode 100644
++index 0000000..666e362
++Binary files /dev/null and b/tokenizing version 2/x64/Debug/vc143.pdb differ
++diff --git a/tokenizing.exe b/tokenizing.exe
++deleted file mode 100644
++index 28ad48b..0000000
++Binary files a/tokenizing.exe and /dev/null differ
++diff --git a/tokenizing_git_log.txt b/tokenizing_git_log.txt
++new file mode 100644
++index 0000000..f4533ad
++--- /dev/null
+++++ b/tokenizing_git_log.txt
++@@ -0,0 +1,33 @@
+++nguye@LAPTOP-1IUI7EAN MINGW64 ~/Documents/CPR101/Final Project/Final Project (master)
+++$ git status
+++On branch master
+++Your branch is up to date with 'Final_Project/master'.
+++
+++Changes not staged for commit:
+++  (use "git add <file>..." to update what will be committed)
+++  (use "git restore <file>..." to discard changes in working directory)
+++        modified:   tokenizing_v2.c
+++        modified:   tokenizing_v2.h
+++
+++Untracked files:
+++  (use "git add <file>..." to include in what will be committed)
+++        tokenizing version 2/
+++        tokenizing_both_functions_separated.c
+++        tokenizing_v2_combine 2 versions.c
+++
+++no changes added to commit (use "git add" and/or "git commit -a")
+++
+++nguye@LAPTOP-1IUI7EAN MINGW64 ~/Documents/CPR101/Final Project/Final Project (master)
+++$ git log
+++commit f64bf9d2510a54c5781d9a205fa8c25ab52b2c28 (HEAD -> master, Final_Project/master)
+++Author: Thy <nguyen.thy2986@gmail.com>
+++Date:   Thu Aug 11 13:09:39 2022 -0400
+++
+++    version_2
+++
+++commit 29ad9a407ae67e3d662c30eac36ab48ab355a36e
+++Author: Thy <nguyen.thy2986@gmail.com>
+++Date:   Wed Aug 3 11:22:05 2022 -0400
+++
+++    �version_1�
+++
++diff --git a/tokenizing_testing.txt b/tokenizing_testing.txt
++new file mode 100644
++index 0000000..9ae3742
++--- /dev/null
+++++ b/tokenizing_testing.txt
++@@ -0,0 +1,51 @@
+++Microsoft Windows [Version 10.0.19044.1889]
+++(c) Microsoft Corporation. All rights reserved.
+++C:\Users\nguye\Documents\CPR101\Final Project\Final Project>token
+++*** Start of Tokenizing Phrases Demo ***
+++Type a few Phrases separated by comma (q - to quit):
+++hi,this is a normal string with comma,between different phrases
+++Phrase #1 is 'hi'
+++Phrase #2 is 'this is a normal string with comma'
+++Phrase #3 is 'between different phrases'
+++Type a few Phrases separated by comma (q - to quit):
+++
+++Type a few Phrases separated by comma (q - to quit):
+++123,345 554,323
+++Phrase #1 is '123'
+++Phrase #2 is '345 554'
+++Phrase #3 is '323'
+++Type a few Phrases separated by comma (q - to quit):
+++This@string@, contains few,special@characters between different commas
+++Phrase #1 is 'This@string@'
+++Phrase #2 is ' contains few'
+++Phrase #3 is 'special@characters between different commas'
+++Type a few Phrases separated by comma (q - to quit):
+++hi,,there are two commas,two times in this string
+++Phrase #1 is 'hi'
+++Phrase #2 is 'there are two commas'
+++Phrase #3 is 'two times in this string'
+++Type a few Phrases separated by comma (q - to quit):
+++hi,,there are two commas,two times in this string,with multiple spaces          before this and      this
+++Phrase #1 is 'hi'
+++Phrase #2 is 'there are two commas'
+++Phrase #3 is 'two times in this string'
+++Phrase #4 is 'with multiple spaces          before this and      this'
+++Type a few Phrases separated by comma (q - to quit):
+++this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code
+++Phrase #1 is 'this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string ex'
+++Type a few Phrases separated by comma (q - to quit):
+++Phrase #1 is 'eeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code'
+++Type a few Phrases separated by comma (q - to quit):
+++thiswillincreasethebuffersieforthiswords,thiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswords
+++Phrase #1 is 'thiswillincreasethebuffersieforthiswords'
+++Phrase #2 is 'thiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreaset'
+++Type a few Phrases separated by comma (q - to quit):
+++Phrase #1 is 'ebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswords'
+++Type a few Phrases separated by comma (q - to quit):
+++hi,,there are two commas,two times in this string,
+++Phrase #1 is 'hi'
+++Phrase #2 is 'there are two commas'
+++Phrase #3 is 'two times in this string'
+++Type a few Phrases separated by comma (q - to quit):
+++q
+++*** End of Tokenizing Phrases Demo ***
++\ No newline at end of file
++diff --git a/tokenizing_v2.c b/tokenizing_v2.c
++index 9984379..b5088bb 100644
++--- a/tokenizing_v2.c
+++++ b/tokenizing_v2.c
++@@ -1,37 +1,67 @@
+++/*
+++-------------------------------------------------
+++Full Name  : Ngoc Diem Thy Nguyen
+++Student ID#: 105310221
+++Email      : nnguyen90@myseneca.ca
+++Section    : NEE
+++-------------------------------------------------
+++*/
+++
+++// TOKENIZING MODULE SOURCE VERSION 2
+++
++ #define _CRT_SECURE_NO_WARNINGS // _CRT_SECURE_NO_WARNINGS means you don't want the compiler to suggest the secure versions of the library functions, e.g. scanf_s when you use scanf
++ #define BUFFER_SIZE 300
++-#include "tokenizing.h" // Include header file created as "tokenizing.h"
+++#include "tokenizing_v2.h" // Include header file created as "tokenizing.h"
++ 
++-void tokenizing(void) {
++-	printf("*** Start of Tokenizing Words and Phrases Demo ***\n"); // print statement to tell the user about the Demo
++-	char* nextWord = NULL; // initialize nextWord with NULL
++-	int wordsCounter; // Declare wordsCounter Variable
++-	char phrases[BUFFER_SIZE]; // Declare phrases array
++-	char* nextPhrase = NULL; // initialize nextPhrase with NULL
++-	int phrasesCounter; // Declare phrasesCounter Variable
++-	do { // Start DO...WHILE Loop
++-		printf("\nType a few Phrases separated by comma with words separated by space (q - to quit):\n"); // print statement for asking user to type few phrases or q to quit
++-		fgets(phrases, BUFFER_SIZE, stdin); // gets input from user
++-		phrases[strlen(phrases) - 1] = '\0'; // put null at the end of user input
++-		if(strcmp(phrases, "q") != 0) { // check if phrases has q or not (To check whether user want to continue or terminate)
++-            char *p = strtok_r(phrases, ",", &nextPhrase); // used strtok_r() on phrases separated comma(i.e ",")
++-            phrasesCounter = 1; // Initialized phrasesCounter as 1
++-            wordsCounter = 1; // Initialized wordsCounter as 1
++-            while(p) { // start WHILE Loop to traverse nextPhrase separated by comma
++-                printf("Phrase #%d is \'%s\'\n", phrasesCounter++, p); // print different phrase in the sentence entered by user
++-                char *q = strtok_r(p, " ", &nextWord); // used strtok_r() on words separated by space(i.e " ")
++-                while(q) { // start WHILE Loop to traverse nextword separated by space
++-                    printf("\tword #%d is \'%s\'\n", wordsCounter++, q); // print different words in the phrase entered by user
++-                    q = strtok_r(NULL, " ",&nextWord); // check if there are any tokens left to retrieve
++-                }
++-                p = strtok_r(NULL, ",", &nextPhrase); // check if there are any tokens left to retrieve
++-            }
+++void tokenizing(void) 
+++{
+++	printf("*** Start of Tokenizing Words Demo ***\n");
+++	char* nextWord = NULL;
+++	char words[BUFFER_SIZE];
+++	int wordsCounter;
+++	do 
+++	{
+++		printf("Type a few words separated by space (q - to quit):\n");
+++		fgets(words, BUFFER_SIZE, stdin);
+++		words[strlen(words) - 1] = '\0';
+++		if (strcmp(words, "q") != 0) 
+++		{
+++			nextWord = strtok(words, " ");
+++			wordsCounter = 1;
+++			while (nextWord) 
+++			{
+++				printf("Word #%d is \'%s\'\n", wordsCounter++, nextWord);
+++				nextWord = strtok(NULL, " ");
+++			}
++ 		}
++-	} while(strcmp(phrases, "q") != 0); // DO...WHILE Loop end condition
++-	printf("*** End of Tokenizing Words and Phrases Demo ***\n\n"); // print statement for telling user the end of Demo
+++	} while (strcmp(words, "q") != 0);
+++	printf("*** End of Tokenizing Words Demo ***\n\n");
+++
+++	printf("*** Start of Tokenizing Phrases Demo ***\n");
+++	char phrases[BUFFER_SIZE];
+++	char* nextPhrase = NULL;
+++	int phrasesCounter;
+++	do 
+++	{
+++		printf("Type a few Phrases separated by comma (q - to quit):\n");
+++		fgets(phrases, BUFFER_SIZE, stdin);
+++		phrases[strlen(phrases) - 1] = '\0';
+++		if (strcmp(phrases, "q") != 0) 
+++		{
+++			nextPhrase = strtok(phrases, ",");
+++			phrasesCounter = 1;
+++			while (nextPhrase)
+++			{
+++				printf("Phrase #%d is \'%s\'\n", phrasesCounter++, nextPhrase);
+++				nextPhrase = strtok(NULL, ",");
+++			}
+++		}
+++	} while (strcmp(phrases, "q") != 0);
+++	printf("*** End of Tokenizing Phrases Demo ***\n\n");
++ }
++ 
++-//Uncomment below main() function to run the code and check for different inputs
++-int main() {
++-    tokenizing();
+++
+++int main() 
+++{
+++	tokenizing();
++ }
++diff --git a/tokenizing_v2.h b/tokenizing_v2.h
++index 231d73c..535b7f1 100644
++--- a/tokenizing_v2.h
+++++ b/tokenizing_v2.h
++@@ -1,6 +1,15 @@
++-#ifndef _TOKENIZING_H_ // This prevent from the multiple inclusion of same header file multiple time.
++-#define _TOKENIZING_H_
++-#include <stdio.h> // The stdio.h header defines three variable types, several macros, and various functions for performing input and output
++-#include <string.h> // The string.h header defines one variable type, one macro, and various functions for manipulating arrays of characters
++-void tokenizing(void); // Function Declaration
+++/*
+++-------------------------------------------------
+++Full Name  : Ngoc Diem Thy Nguyen
+++Student ID#: 105310221
+++Email      : nnguyen90@myseneca.ca
+++Section    : NEE
+++-------------------------------------------------
+++*/
+++
+++#ifndef _TOKENIZING_V2_H_ // This prevent from the multiple inclusion of same header file multiple time.
+++#define _TOKENIZING_V2_H_ 
+++#include <stdio.h> 
+++#include <string.h> 
+++void tokenizing(void);
++ #endif
++diff --git a/tokenizing_v2.h.gch b/tokenizing_v2.h.gch
++new file mode 100644
++index 0000000..78962c2
++Binary files /dev/null and b/tokenizing_v2.h.gch differ
++
++commit f64bf9d2510a54c5781d9a205fa8c25ab52b2c28
++Author: Thy <nguyen.thy2986@gmail.com>
++Date:   Thu Aug 11 13:09:39 2022 -0400
++
++    version_2
++
++diff --git a/.vs/Final Project/v17/.suo b/.vs/Final Project/v17/.suo
++index 851e0bd..35cfa7e 100644
++Binary files a/.vs/Final Project/v17/.suo and b/.vs/Final Project/v17/.suo differ
++diff --git a/.vs/Final Project/v17/Browse.VC.db b/.vs/Final Project/v17/Browse.VC.db
++index 9da0386..7f634bd 100644
++Binary files a/.vs/Final Project/v17/Browse.VC.db and b/.vs/Final Project/v17/Browse.VC.db differ
++diff --git a/.vs/Final Project/v17/Browse.VC.db-shm b/.vs/Final Project/v17/Browse.VC.db-shm
++new file mode 100644
++index 0000000..4e3571e
++Binary files /dev/null and b/.vs/Final Project/v17/Browse.VC.db-shm differ
++diff --git a/.vs/Final Project/v17/Browse.VC.db-wal b/.vs/Final Project/v17/Browse.VC.db-wal
++new file mode 100644
++index 0000000..e69de29
++diff --git a/.vs/Final Project/v17/ipch/AutoPCH/20cb963f21a067de/TOKENIZING.ipch b/.vs/Final Project/v17/ipch/AutoPCH/20cb963f21a067de/TOKENIZING.ipch
++new file mode 100644
++index 0000000..307096b
++Binary files /dev/null and b/.vs/Final Project/v17/ipch/AutoPCH/20cb963f21a067de/TOKENIZING.ipch differ
++diff --git a/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch b/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch
++index 0b8f9e9..a304b6c 100644
++Binary files a/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch and b/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch differ
++diff --git a/.vs/Final Project/v17/ipch/AutoPCH/dd356255fe0c59ed/MAIN.ipch b/.vs/Final Project/v17/ipch/AutoPCH/dd356255fe0c59ed/MAIN.ipch
++new file mode 100644
++index 0000000..9d0891a
++Binary files /dev/null and b/.vs/Final Project/v17/ipch/AutoPCH/dd356255fe0c59ed/MAIN.ipch differ
++diff --git a/Final Project.vcxproj b/Final Project.vcxproj
++index 0112e62..185ce6d 100644
++--- a/Final Project.vcxproj	
+++++ b/Final Project.vcxproj	
++@@ -19,6 +19,7 @@
++     </ProjectConfiguration>
++   </ItemGroup>
++   <ItemGroup>
+++    <ClCompile Include="main.c" />
++     <ClCompile Include="tokenizing.c" />
++   </ItemGroup>
++   <ItemGroup>
++diff --git a/Final Project.vcxproj.filters b/Final Project.vcxproj.filters
++index f7bde54..43caeb2 100644
++--- a/Final Project.vcxproj.filters	
+++++ b/Final Project.vcxproj.filters	
++@@ -14,6 +14,9 @@
++     <ClCompile Include="tokenizing.c">
++       <Filter>Resource Files</Filter>
++     </ClCompile>
+++    <ClCompile Include="main.c">
+++      <Filter>Resource Files</Filter>
+++    </ClCompile>
++   </ItemGroup>
++   <ItemGroup>
++     <ClInclude Include="tokenizing.h">
++diff --git a/main.c b/main.c
++new file mode 100644
++index 0000000..d916a78
++--- /dev/null
+++++ b/main.c
++@@ -0,0 +1,20 @@
+++/*
+++-------------------------------------------------
+++Full Name  : Ngoc Diem Thy Nguyen
+++Student ID#: 105310221
+++Email      : nnguyen90@myseneca.ca
+++Section    : NEE
+++-------------------------------------------------
+++*/
+++
+++#define _CRT_SECURE_NO_WARNINGS
+++// System function
+++#include <stdio.h>
+++// Header file
+++#include "tokenizing.h"
+++
+++int main()           // Main function to run the code
+++{
+++	tokenizing();
+++	return 0;
+++}
++\ No newline at end of file
++diff --git a/main.exe b/main.exe
++new file mode 100644
++index 0000000..b8296fa
++Binary files /dev/null and b/main.exe differ
++diff --git a/tokenizing-testing-V1.txt b/tokenizing-testing-V1.txt
++new file mode 100644
++index 0000000..027c070
++--- /dev/null
+++++ b/tokenizing-testing-V1.txt
++@@ -0,0 +1,110 @@
+++C:\Users\nguye\Documents\CPR101\FinalProject\FinalProject>main
+++*** Start of Tokenizing Words Demo ***
+++Type a few words reparated by space (q - to quit):
+++This is normal string
+++Word #1 is 'This'
+++Word #2 is 'is'
+++Word #3 is 'normal'
+++Word #4 is 'string'
+++Type a few words reparated by space (q - to quit):
+++
+++Type a few words reparated by space (q - to quit):
+++123 456 789
+++Word #1 is '123'
+++Word #2 is '456'
+++Word #3 is '789'
+++Type a few words reparated by space (q - to quit):
+++This@string@ contains special@characters
+++Word #1 is 'This@string@'
+++Word #2 is 'contains'
+++Word #3 is 'special@characters'
+++Type a few words reparated by space (q - to quit):
+++This           is a      normal              string
+++Word #1 is 'This'
+++Word #2 is 'is'
+++Word #3 is 'a'
+++Word #4 is 'normal'
+++Word #5 is 'string'
+++Type a few words reparated by space (q - to quit):
+++This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string
+++Word #1 is 'This'
+++Word #2 is 'is'
+++Word #3 is 'normal'
+++Word #4 is 'string'
+++Word #5 is 'This'
+++Word #6 is 'is'
+++Word #7 is 'normal'
+++Word #8 is 'string'
+++Word #9 is 'This'
+++Word #10 is 'is'
+++Word #11 is 'normal'
+++Word #12 is 'string'
+++Word #13 is 'This'
+++Word #14 is 'is'
+++Word #15 is 'normal'
+++Word #16 is 'string'
+++Word #17 is 'This'
+++Word #18 is 'is'
+++Word #19 is 'normal'
+++Word #20 is 'string'
+++Word #21 is 'This'
+++Word #22 is 'is'
+++Word #23 is 'normal'
+++Word #24 is 'string'
+++Word #25 is 'This'
+++Word #26 is 'is'
+++Word #27 is 'normal'
+++Word #28 is 'string'
+++Word #29 is 'This'
+++Word #30 is 'is'
+++Word #31 is 'normal'
+++Word #32 is 'string'
+++Word #33 is 'This'
+++Word #34 is 'is'
+++Word #35 is 'normal'
+++Word #36 is 'string'
+++Word #37 is 'This'
+++Word #38 is 'is'
+++Word #39 is 'normal'
+++Word #40 is 'string'
+++Word #41 is 'This'
+++Word #42 is 'is'
+++Word #43 is 'normal'
+++Word #44 is 'string'
+++Word #45 is 'This'
+++Word #46 is 'is'
+++Word #47 is 'normal'
+++Word #48 is 'string'
+++Word #49 is 'This'
+++Word #50 is 'is'
+++Word #51 is 'normal'
+++Word #52 is 'string'
+++Word #53 is 'This'
+++Word #54 is 'is'
+++Word #55 is 'norm'
+++Type a few words reparated by space (q - to quit):
+++Word #1 is 'l'
+++Word #2 is 'string'
+++Word #3 is 'This'
+++Word #4 is 'is'
+++Word #5 is 'normal'
+++Word #6 is 'string'
+++Word #7 is 'This'
+++Word #8 is 'is'
+++Word #9 is 'normal'
+++Word #10 is 'string'
+++Word #11 is 'This'
+++Word #12 is 'is'
+++Word #13 is 'normal'
+++Word #14 is 'string'
+++Word #15 is 'This'
+++Word #16 is 'is'
+++Word #17 is 'normal'
+++Word #18 is 'string'
+++Word #19 is 'This'
+++Word #20 is 'is'
+++Word #21 is 'normal'
+++Word #22 is 'string'
+++Type a few words reparated by space (q - to quit):
+++q
+++*** End of Tokenizing Words Demo ***
++\ No newline at end of file
++diff --git a/tokenizing.c b/tokenizing.c
++index 075a81b..2f1f4bc 100644
++--- a/tokenizing.c
+++++ b/tokenizing.c
++@@ -1,3 +1,12 @@
+++/*
+++-------------------------------------------------
+++Full Name  : Ngoc Diem Thy Nguyen
+++Student ID#: 105310221
+++Email      : nnguyen90@myseneca.ca
+++Section    : NEE
+++-------------------------------------------------
+++*/
+++
++ // TOKENIZING MODULE SOURCE
++ #define _CRT_SECURE_NO_WARNINGS
++ #define BUFFER_SIZE 300           
++@@ -28,7 +37,3 @@ void tokenizing(void)
++ 	}while (strcmp(words, "q") != 0);           
++ 	printf ("*** End of Tokenizing Words Demo ***\n\n");					
++ }
++-int main()           // Main function to run the code
++-{
++-	tokenizing();    
++-}
++\ No newline at end of file
++diff --git a/tokenizing.exe b/tokenizing.exe
++new file mode 100644
++index 0000000..28ad48b
++Binary files /dev/null and b/tokenizing.exe differ
++diff --git a/tokenizing.h b/tokenizing.h
++index 535efd9..b932a52 100644
++--- a/tokenizing.h
+++++ b/tokenizing.h
++@@ -1,3 +1,12 @@
+++/*
+++-------------------------------------------------
+++Full Name  : Ngoc Diem Thy Nguyen
+++Student ID#: 105310221
+++Email      : nnguyen90@myseneca.ca
+++Section    : NEE
+++-------------------------------------------------
+++*/
+++
++ #ifndef _TOKENIZING_H_  // Prevent multiple inclusion of same header file
++ #define _TOKENIZING_H_  
++ #include <stdio.h>
++diff --git a/tokenizing.h.gch b/tokenizing.h.gch
++new file mode 100644
++index 0000000..cf96b0e
++Binary files /dev/null and b/tokenizing.h.gch differ
++diff --git a/tokenizing_v2.c b/tokenizing_v2.c
++new file mode 100644
++index 0000000..9984379
++--- /dev/null
+++++ b/tokenizing_v2.c
++@@ -0,0 +1,37 @@
+++#define _CRT_SECURE_NO_WARNINGS // _CRT_SECURE_NO_WARNINGS means you don't want the compiler to suggest the secure versions of the library functions, e.g. scanf_s when you use scanf
+++#define BUFFER_SIZE 300
+++#include "tokenizing.h" // Include header file created as "tokenizing.h"
+++
+++void tokenizing(void) {
+++	printf("*** Start of Tokenizing Words and Phrases Demo ***\n"); // print statement to tell the user about the Demo
+++	char* nextWord = NULL; // initialize nextWord with NULL
+++	int wordsCounter; // Declare wordsCounter Variable
+++	char phrases[BUFFER_SIZE]; // Declare phrases array
+++	char* nextPhrase = NULL; // initialize nextPhrase with NULL
+++	int phrasesCounter; // Declare phrasesCounter Variable
+++	do { // Start DO...WHILE Loop
+++		printf("\nType a few Phrases separated by comma with words separated by space (q - to quit):\n"); // print statement for asking user to type few phrases or q to quit
+++		fgets(phrases, BUFFER_SIZE, stdin); // gets input from user
+++		phrases[strlen(phrases) - 1] = '\0'; // put null at the end of user input
+++		if(strcmp(phrases, "q") != 0) { // check if phrases has q or not (To check whether user want to continue or terminate)
+++            char *p = strtok_r(phrases, ",", &nextPhrase); // used strtok_r() on phrases separated comma(i.e ",")
+++            phrasesCounter = 1; // Initialized phrasesCounter as 1
+++            wordsCounter = 1; // Initialized wordsCounter as 1
+++            while(p) { // start WHILE Loop to traverse nextPhrase separated by comma
+++                printf("Phrase #%d is \'%s\'\n", phrasesCounter++, p); // print different phrase in the sentence entered by user
+++                char *q = strtok_r(p, " ", &nextWord); // used strtok_r() on words separated by space(i.e " ")
+++                while(q) { // start WHILE Loop to traverse nextword separated by space
+++                    printf("\tword #%d is \'%s\'\n", wordsCounter++, q); // print different words in the phrase entered by user
+++                    q = strtok_r(NULL, " ",&nextWord); // check if there are any tokens left to retrieve
+++                }
+++                p = strtok_r(NULL, ",", &nextPhrase); // check if there are any tokens left to retrieve
+++            }
+++		}
+++	} while(strcmp(phrases, "q") != 0); // DO...WHILE Loop end condition
+++	printf("*** End of Tokenizing Words and Phrases Demo ***\n\n"); // print statement for telling user the end of Demo
+++}
+++
+++//Uncomment below main() function to run the code and check for different inputs
+++int main() {
+++    tokenizing();
+++}
++diff --git a/tokenizing_v2.h b/tokenizing_v2.h
++new file mode 100644
++index 0000000..231d73c
++--- /dev/null
+++++ b/tokenizing_v2.h
++@@ -0,0 +1,6 @@
+++#ifndef _TOKENIZING_H_ // This prevent from the multiple inclusion of same header file multiple time.
+++#define _TOKENIZING_H_
+++#include <stdio.h> // The stdio.h header defines three variable types, several macros, and various functions for performing input and output
+++#include <string.h> // The string.h header defines one variable type, one macro, and various functions for manipulating arrays of characters
+++void tokenizing(void); // Function Declaration
+++#endif
++diff --git a/tokenzing-testing-V2.txt b/tokenzing-testing-V2.txt
++new file mode 100644
++index 0000000..28d1733
++--- /dev/null
+++++ b/tokenzing-testing-V2.txt
++@@ -0,0 +1,234 @@
+++The input and output for all the test cases for version 1 mentioned in excel
+++
+++1) Test case 1
+++ 
+++INPUT:
+++hi,this is a normal string with comma,between different phrases
+++
+++OUTPUT:
+++Phrase #1 is 'hi'
+++        word #1 is 'hi'
+++Phrase #2 is 'this is a normal string with comma'
+++        word #2 is 'this'
+++        word #3 is 'is'
+++        word #4 is 'a'
+++        word #5 is 'normal'
+++        word #6 is 'string'
+++        word #7 is 'with'
+++        word #8 is 'comma'
+++Phrase #3 is 'between different phrases'
+++        word #9 is 'between'
+++        word #10 is 'different'
+++        word #11 is 'phrases'
+++
+++2) Test case 2
+++
+++INPUT:
+++""
+++
+++OUTPUT:
+++""
+++
+++3) Test case 3
+++
+++INPUT:
+++123,345 554,323
+++
+++OUTPUT:
+++Phrase #1 is '123'
+++        word #1 is '123'
+++Phrase #2 is '345 554'
+++        word #2 is '345'
+++        word #3 is '554'
+++Phrase #3 is '323'
+++        word #4 is '323'
+++
+++4) Test case 4
+++
+++INPUT:
+++This@string@, contains few,special@characters between different commas
+++
+++OUTPUT:
+++Phrase #1 is 'This@string@'
+++        word #1 is 'This@string@'
+++Phrase #2 is ' contains few'
+++        word #2 is 'contains'
+++        word #3 is 'few'
+++Phrase #3 is 'special@characters between different commas'
+++        word #4 is 'special@characters'
+++        word #5 is 'between'
+++        word #6 is 'different'
+++        word #7 is 'commas'
+++
+++5) Test case 5
+++
+++INPUT:
+++hi,,there are two commas,two times in this string
+++
+++OUTPUT:
+++Phrase #1 is 'hi'
+++        word #1 is 'hi'
+++Phrase #2 is 'there are two commas'
+++        word #2 is 'there'
+++        word #3 is 'are'
+++        word #4 is 'two'
+++        word #5 is 'commas'
+++Phrase #3 is 'two times in this string'
+++        word #6 is 'two'
+++        word #7 is 'times'
+++        word #8 is 'in'
+++        word #9 is 'this'
+++        word #10 is 'string'
+++
+++6) Test case 6
+++
+++INPUT:
+++hi,,there are two commas,two times in this string,with multiple spaces          before this and      this
+++
+++OUTPUT:
+++Phrase #1 is 'hi'
+++        word #1 is 'hi'
+++Phrase #2 is 'there are two commas'
+++        word #2 is 'there'
+++        word #3 is 'are'
+++        word #4 is 'two'
+++        word #5 is 'commas'
+++Phrase #3 is 'two times in this string'
+++        word #6 is 'two'
+++        word #7 is 'times'
+++        word #8 is 'in'
+++        word #9 is 'this'
+++        word #10 is 'string'
+++Phrase #4 is 'with multiple spaces          before this and      this'
+++        word #11 is 'with'
+++        word #12 is 'multiple'
+++        word #13 is 'spaces'
+++        word #14 is 'before'
+++        word #15 is 'this'
+++        word #16 is 'and'
+++        word #17 is 'this'
+++
+++7) Test case 7
+++
+++INPUT:
+++q
+++
+++OUTPUT:
+++*** End of Tokenizing Words Demo *** (Function Terminated)
+++
+++8) Test case 8
+++
+++INPUT:
+++this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code
+++
+++OUTPUT: (Notice the wrong results after word 51 in phrase 1 where the buffer size exceeds the buffer size in code)
+++Phrase #1 is 'this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string ex'
+++        word #1 is 'this'
+++        word #2 is 'will'
+++        word #3 is 'overflow'
+++        word #4 is 'the'
+++        word #5 is 'buffer'
+++        word #6 is 'because'
+++        word #7 is 'this'
+++        word #8 is 'string'
+++        word #9 is 'exceeds'
+++        word #10 is 'the'
+++        word #11 is 'buffer'
+++        word #12 is 'size'
+++        word #13 is 'in'
+++        word #14 is 'code'
+++        word #15 is 'this'
+++        word #16 is 'will'
+++        word #17 is 'overflow'
+++        word #18 is 'the'
+++        word #19 is 'buffer'
+++        word #20 is 'because'
+++        word #21 is 'this'
+++        word #22 is 'string'
+++        word #23 is 'exceeds'
+++        word #24 is 'the'
+++        word #25 is 'buffer'
+++        word #26 is 'size'
+++        word #27 is 'in'
+++        word #28 is 'code'
+++        word #29 is 'this'
+++        word #30 is 'will'
+++        word #31 is 'overflow'
+++        word #32 is 'the'
+++        word #33 is 'buffer'
+++        word #34 is 'because'
+++        word #35 is 'this'
+++        word #36 is 'string'
+++        word #37 is 'exceeds'
+++        word #38 is 'the'
+++        word #39 is 'buffer'
+++        word #40 is 'size'
+++        word #41 is 'in'
+++        word #42 is 'code'
+++        word #43 is 'this'
+++        word #44 is 'will'
+++        word #45 is 'overflow'
+++        word #46 is 'the'
+++        word #47 is 'buffer'
+++        word #48 is 'because'
+++        word #49 is 'this'
+++        word #50 is 'string'
+++        word #51 is 'ex'
+++
+++Type a few Phrases separated by comma with words separated by space (q - to quit):
+++Phrase #1 is 'eeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code'
+++        word #1 is 'eeds'
+++        word #2 is 'the'
+++        word #3 is 'buffer'
+++        word #4 is 'size'
+++        word #5 is 'in'
+++        word #6 is 'code'
+++        word #7 is 'this'
+++        word #8 is 'will'
+++        word #9 is 'overflow'
+++        word #10 is 'the'
+++        word #11 is 'buffer'
+++        word #12 is 'because'
+++        word #13 is 'this'
+++        word #14 is 'string'
+++        word #15 is 'exceeds'
+++        word #16 is 'the'
+++        word #17 is 'buffer'
+++        word #18 is 'size'
+++        word #19 is 'in'
+++        word #20 is 'code'
+++
+++9) Test Case 9
+++
+++INPUT:
+++thiswillincreasethebuffersieforthiswords,thiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswords
+++
+++OUTPUT: (Notice the wrong results after phrase 2 where the buffer size for a word exceeds the buffer size in code)
+++Phrase #1 is 'thiswillincreasethebuffersieforthiswords'
+++        word #1 is 'thiswillincreasethebuffersieforthiswords'
+++Phrase #2 is 'thiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreaset'
+++        word #2 is 'thiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreaset'
+++
+++Type a few Phrases separated by comma with words separated by space (q - to quit):
+++Phrase #1 is 'ebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswords'
+++        word #1 is 'ebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswords'
+++
+++10) Test Case 10
+++
+++INPUT:
+++hi,,there are two commas,two times in this string,
+++
+++OUTPUT:
+++Phrase #1 is 'hi'
+++        word #1 is 'hi'
+++Phrase #2 is 'there are two commas'
+++        word #2 is 'there'
+++        word #3 is 'are'
+++        word #4 is 'two'
+++        word #5 is 'commas'
+++Phrase #3 is 'two times in this string'
+++        word #6 is 'two'
+++        word #7 is 'times'
+++        word #8 is 'in'
+++        word #9 is 'this'
+++        word #10 is 'string'
++\ No newline at end of file
++diff --git a/x64/Debug/Final Project.exe b/x64/Debug/Final Project.exe
++index 39649be..4e4500f 100644
++Binary files a/x64/Debug/Final Project.exe and b/x64/Debug/Final Project.exe differ
++diff --git a/x64/Debug/Final Project.exe.recipe b/x64/Debug/Final Project.exe.recipe
++index 7735a33..b8aabfc 100644
++--- a/x64/Debug/Final Project.exe.recipe	
+++++ b/x64/Debug/Final Project.exe.recipe	
++@@ -2,7 +2,7 @@
++ <Project>
++   <ProjectOutputs>
++     <ProjectOutput>
++-      <FullPath>C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe</FullPath>
+++      <FullPath>C:\Users\nguye\Documents\CPR101\FinalProject\FinalProject\x64\Debug\Final Project.exe</FullPath>
++     </ProjectOutput>
++   </ProjectOutputs>
++   <ContentFiles />
++diff --git a/x64/Debug/Final Project.ilk b/x64/Debug/Final Project.ilk
++index 0a5257b..2a3aab1 100644
++Binary files a/x64/Debug/Final Project.ilk and b/x64/Debug/Final Project.ilk differ
++diff --git a/x64/Debug/Final Project.log b/x64/Debug/Final Project.log
++index 8f87944..9845219 100644
++--- a/x64/Debug/Final Project.log	
+++++ b/x64/Debug/Final Project.log	
++@@ -1,3 +1,2 @@
++-﻿  tokenizing.c
++-  LINK : C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe not found or not built by the last incremental link; performing full link
++-  Final Project.vcxproj -> C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe
+++﻿  main.c
+++  Final Project.vcxproj -> C:\Users\nguye\Documents\CPR101\FinalProject\FinalProject\x64\Debug\Final Project.exe
++diff --git a/x64/Debug/Final Project.pdb b/x64/Debug/Final Project.pdb
++index ef7655a..135aeaa 100644
++Binary files a/x64/Debug/Final Project.pdb and b/x64/Debug/Final Project.pdb differ
++diff --git a/x64/Debug/Final Project.tlog/CL.command.1.tlog b/x64/Debug/Final Project.tlog/CL.command.1.tlog
++index 9d48dc7..ee07b30 100644
++Binary files a/x64/Debug/Final Project.tlog/CL.command.1.tlog and b/x64/Debug/Final Project.tlog/CL.command.1.tlog differ
++diff --git a/x64/Debug/Final Project.tlog/CL.read.1.tlog b/x64/Debug/Final Project.tlog/CL.read.1.tlog
++index 418abb3..158653c 100644
++Binary files a/x64/Debug/Final Project.tlog/CL.read.1.tlog and b/x64/Debug/Final Project.tlog/CL.read.1.tlog differ
++diff --git a/x64/Debug/Final Project.tlog/CL.write.1.tlog b/x64/Debug/Final Project.tlog/CL.write.1.tlog
++index 133932f..cb24c31 100644
++Binary files a/x64/Debug/Final Project.tlog/CL.write.1.tlog and b/x64/Debug/Final Project.tlog/CL.write.1.tlog differ
++diff --git a/x64/Debug/Final Project.tlog/Final Project.lastbuildstate b/x64/Debug/Final Project.tlog/Final Project.lastbuildstate
++index 8b38596..4ea1590 100644
++--- a/x64/Debug/Final Project.tlog/Final Project.lastbuildstate	
+++++ b/x64/Debug/Final Project.tlog/Final Project.lastbuildstate	
++@@ -1,2 +1,2 @@
++ PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.31.31103:TargetPlatformVersion=10.0.19041.0:
++-Debug|x64|C:\Users\nguye\Documents\CPR101\Final Project\Final Project\|
+++Debug|x64|C:\Users\nguye\Documents\CPR101\FinalProject\FinalProject\|
++diff --git a/x64/Debug/Final Project.tlog/link.command.1.tlog b/x64/Debug/Final Project.tlog/link.command.1.tlog
++index 5ac90bb..8856d3d 100644
++Binary files a/x64/Debug/Final Project.tlog/link.command.1.tlog and b/x64/Debug/Final Project.tlog/link.command.1.tlog differ
++diff --git a/x64/Debug/Final Project.tlog/link.read.1.tlog b/x64/Debug/Final Project.tlog/link.read.1.tlog
++index 7ea0b88..a4de3d0 100644
++Binary files a/x64/Debug/Final Project.tlog/link.read.1.tlog and b/x64/Debug/Final Project.tlog/link.read.1.tlog differ
++diff --git a/x64/Debug/Final Project.tlog/link.write.1.tlog b/x64/Debug/Final Project.tlog/link.write.1.tlog
++index f2e49e0..fefd422 100644
++Binary files a/x64/Debug/Final Project.tlog/link.write.1.tlog and b/x64/Debug/Final Project.tlog/link.write.1.tlog differ
++diff --git a/x64/Debug/Final Project.vcxproj.FileListAbsolute.txt b/x64/Debug/Final Project.vcxproj.FileListAbsolute.txt
++index f411f54..2ff072c 100644
++--- a/x64/Debug/Final Project.vcxproj.FileListAbsolute.txt	
+++++ b/x64/Debug/Final Project.vcxproj.FileListAbsolute.txt	
++@@ -1 +1,2 @@
++ C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe
+++C:\Users\nguye\Documents\CPR101\FinalProject\FinalProject\x64\Debug\Final Project.exe
++diff --git a/x64/Debug/main.obj b/x64/Debug/main.obj
++new file mode 100644
++index 0000000..318fc56
++Binary files /dev/null and b/x64/Debug/main.obj differ
++diff --git a/x64/Debug/tokenizing.obj b/x64/Debug/tokenizing.obj
++index 683dee0..4c679bd 100644
++Binary files a/x64/Debug/tokenizing.obj and b/x64/Debug/tokenizing.obj differ
++diff --git a/x64/Debug/vc143.idb b/x64/Debug/vc143.idb
++index 896fcb0..41e1e62 100644
++Binary files a/x64/Debug/vc143.idb and b/x64/Debug/vc143.idb differ
++diff --git a/x64/Debug/vc143.pdb b/x64/Debug/vc143.pdb
++index 3649fa2..ba87ffe 100644
++Binary files a/x64/Debug/vc143.pdb and b/x64/Debug/vc143.pdb differ
++
++commit 29ad9a407ae67e3d662c30eac36ab48ab355a36e
++Author: Thy <nguyen.thy2986@gmail.com>
++Date:   Wed Aug 3 11:22:05 2022 -0400
++
++    “version_1”
++
++diff --git a/.vs/Final Project/v17/.suo b/.vs/Final Project/v17/.suo
++new file mode 100644
++index 0000000..851e0bd
++Binary files /dev/null and b/.vs/Final Project/v17/.suo differ
++diff --git a/.vs/Final Project/v17/Browse.VC.db b/.vs/Final Project/v17/Browse.VC.db
++new file mode 100644
++index 0000000..9da0386
++Binary files /dev/null and b/.vs/Final Project/v17/Browse.VC.db differ
++diff --git a/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch b/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch
++new file mode 100644
++index 0000000..0b8f9e9
++Binary files /dev/null and b/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch differ
++diff --git a/Final Project.vcxproj b/Final Project.vcxproj
++new file mode 100644
++index 0000000..0112e62
++--- /dev/null
+++++ b/Final Project.vcxproj	
++@@ -0,0 +1,150 @@
+++<?xml version="1.0" encoding="utf-8"?>
+++<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+++  <ItemGroup Label="ProjectConfigurations">
+++    <ProjectConfiguration Include="Debug|Win32">
+++      <Configuration>Debug</Configuration>
+++      <Platform>Win32</Platform>
+++    </ProjectConfiguration>
+++    <ProjectConfiguration Include="Release|Win32">
+++      <Configuration>Release</Configuration>
+++      <Platform>Win32</Platform>
+++    </ProjectConfiguration>
+++    <ProjectConfiguration Include="Debug|x64">
+++      <Configuration>Debug</Configuration>
+++      <Platform>x64</Platform>
+++    </ProjectConfiguration>
+++    <ProjectConfiguration Include="Release|x64">
+++      <Configuration>Release</Configuration>
+++      <Platform>x64</Platform>
+++    </ProjectConfiguration>
+++  </ItemGroup>
+++  <ItemGroup>
+++    <ClCompile Include="tokenizing.c" />
+++  </ItemGroup>
+++  <ItemGroup>
+++    <ClInclude Include="tokenizing.h" />
+++  </ItemGroup>
+++  <PropertyGroup Label="Globals">
+++    <VCProjectVersion>16.0</VCProjectVersion>
+++    <Keyword>Win32Proj</Keyword>
+++    <ProjectGuid>{df863cd6-2967-4bc1-8241-09f8eb15acaf}</ProjectGuid>
+++    <RootNamespace>FinalProject</RootNamespace>
+++    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+++  </PropertyGroup>
+++  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+++    <ConfigurationType>Application</ConfigurationType>
+++    <UseDebugLibraries>true</UseDebugLibraries>
+++    <PlatformToolset>v143</PlatformToolset>
+++    <CharacterSet>Unicode</CharacterSet>
+++  </PropertyGroup>
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+++    <ConfigurationType>Application</ConfigurationType>
+++    <UseDebugLibraries>false</UseDebugLibraries>
+++    <PlatformToolset>v143</PlatformToolset>
+++    <WholeProgramOptimization>true</WholeProgramOptimization>
+++    <CharacterSet>Unicode</CharacterSet>
+++  </PropertyGroup>
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+++    <ConfigurationType>Application</ConfigurationType>
+++    <UseDebugLibraries>true</UseDebugLibraries>
+++    <PlatformToolset>v143</PlatformToolset>
+++    <CharacterSet>Unicode</CharacterSet>
+++  </PropertyGroup>
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+++    <ConfigurationType>Application</ConfigurationType>
+++    <UseDebugLibraries>false</UseDebugLibraries>
+++    <PlatformToolset>v143</PlatformToolset>
+++    <WholeProgramOptimization>true</WholeProgramOptimization>
+++    <CharacterSet>Unicode</CharacterSet>
+++  </PropertyGroup>
+++  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+++  <ImportGroup Label="ExtensionSettings">
+++  </ImportGroup>
+++  <ImportGroup Label="Shared">
+++  </ImportGroup>
+++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+++  </ImportGroup>
+++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+++  </ImportGroup>
+++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+++  </ImportGroup>
+++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+++  </ImportGroup>
+++  <PropertyGroup Label="UserMacros" />
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+++    <LinkIncremental>true</LinkIncremental>
+++  </PropertyGroup>
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+++    <LinkIncremental>false</LinkIncremental>
+++  </PropertyGroup>
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+++    <LinkIncremental>true</LinkIncremental>
+++  </PropertyGroup>
+++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+++    <LinkIncremental>false</LinkIncremental>
+++  </PropertyGroup>
+++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+++    <ClCompile>
+++      <WarningLevel>Level3</WarningLevel>
+++      <SDLCheck>true</SDLCheck>
+++      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+++      <ConformanceMode>true</ConformanceMode>
+++    </ClCompile>
+++    <Link>
+++      <SubSystem>Console</SubSystem>
+++      <GenerateDebugInformation>true</GenerateDebugInformation>
+++    </Link>
+++  </ItemDefinitionGroup>
+++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+++    <ClCompile>
+++      <WarningLevel>Level3</WarningLevel>
+++      <FunctionLevelLinking>true</FunctionLevelLinking>
+++      <IntrinsicFunctions>true</IntrinsicFunctions>
+++      <SDLCheck>true</SDLCheck>
+++      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+++      <ConformanceMode>true</ConformanceMode>
+++    </ClCompile>
+++    <Link>
+++      <SubSystem>Console</SubSystem>
+++      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+++      <OptimizeReferences>true</OptimizeReferences>
+++      <GenerateDebugInformation>true</GenerateDebugInformation>
+++    </Link>
+++  </ItemDefinitionGroup>
+++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+++    <ClCompile>
+++      <WarningLevel>Level3</WarningLevel>
+++      <SDLCheck>true</SDLCheck>
+++      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+++      <ConformanceMode>true</ConformanceMode>
+++    </ClCompile>
+++    <Link>
+++      <SubSystem>Console</SubSystem>
+++      <GenerateDebugInformation>true</GenerateDebugInformation>
+++    </Link>
+++  </ItemDefinitionGroup>
+++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+++    <ClCompile>
+++      <WarningLevel>Level3</WarningLevel>
+++      <FunctionLevelLinking>true</FunctionLevelLinking>
+++      <IntrinsicFunctions>true</IntrinsicFunctions>
+++      <SDLCheck>true</SDLCheck>
+++      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+++      <ConformanceMode>true</ConformanceMode>
+++    </ClCompile>
+++    <Link>
+++      <SubSystem>Console</SubSystem>
+++      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+++      <OptimizeReferences>true</OptimizeReferences>
+++      <GenerateDebugInformation>true</GenerateDebugInformation>
+++    </Link>
+++  </ItemDefinitionGroup>
+++  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+++  <ImportGroup Label="ExtensionTargets">
+++  </ImportGroup>
+++</Project>
++\ No newline at end of file
++diff --git a/Final Project.vcxproj.filters b/Final Project.vcxproj.filters
++new file mode 100644
++index 0000000..f7bde54
++--- /dev/null
+++++ b/Final Project.vcxproj.filters	
++@@ -0,0 +1,23 @@
+++﻿<?xml version="1.0" encoding="utf-8"?>
+++<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+++  <ItemGroup>
+++    <Filter Include="Header Files">
+++      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+++      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+++    </Filter>
+++    <Filter Include="Resource Files">
+++      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+++      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+++    </Filter>
+++  </ItemGroup>
+++  <ItemGroup>
+++    <ClCompile Include="tokenizing.c">
+++      <Filter>Resource Files</Filter>
+++    </ClCompile>
+++  </ItemGroup>
+++  <ItemGroup>
+++    <ClInclude Include="tokenizing.h">
+++      <Filter>Header Files</Filter>
+++    </ClInclude>
+++  </ItemGroup>
+++</Project>
++\ No newline at end of file
++diff --git a/Final Project.vcxproj.user b/Final Project.vcxproj.user
++new file mode 100644
++index 0000000..88a5509
++--- /dev/null
+++++ b/Final Project.vcxproj.user	
++@@ -0,0 +1,4 @@
+++﻿<?xml version="1.0" encoding="utf-8"?>
+++<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+++  <PropertyGroup />
+++</Project>
++\ No newline at end of file
++diff --git a/Source.cpp b/Source.cpp
++new file mode 100644
++index 0000000..e69de29
++diff --git a/tokenizing-testing.txt b/tokenizing-testing.txt
++new file mode 100644
++index 0000000..4a6579b
++--- /dev/null
+++++ b/tokenizing-testing.txt
++@@ -0,0 +1,144 @@
+++1) Test case 1
+++ 
+++INPUT:
+++This is a normal string
+++
+++OUTPUT:
+++Word #1 is 'This'
+++Word #2 is 'is'
+++Word #3 is 'a'
+++Word #4 is 'normal'
+++Word #5 is 'string'
+++
+++2) Test case 2
+++
+++INPUT:
+++""
+++
+++OUTPUT:
+++""
+++
+++3) Test case 3
+++
+++INPUT:
+++123 456 789
+++
+++OUTPUT:
+++Word #1 is '123'
+++Word #2 is '456'
+++Word #3 is '789'
+++
+++4) Test case 4
+++
+++INPUT:
+++This@string@ contains special@characters
+++
+++OUTPUT:
+++Word #1 is 'This@string@'
+++Word #2 is 'contains'
+++Word #3 is 'special@characters'
+++
+++5) Test case 5
+++
+++INPUT:
+++This           is a      normal              string
+++
+++OUTPUT:
+++Word #1 is 'This'
+++Word #2 is 'is'
+++Word #3 is 'a'
+++Word #4 is 'normal'
+++Word #5 is 'string'
+++
+++6) Test case 6
+++
+++INPUT:
+++q
+++
+++OUTPUT:
+++*** End of Tokenizing Words Demo *** (Function Terminated)
+++
+++7) Test case 7
+++
+++INPUT:
+++This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string
+++
+++OUTPUT: (See the wrong results below after word 55 where the buffer size exceeds the buffer size in code)
+++Word #1 is 'This'
+++Word #2 is 'is'
+++Word #3 is 'normal'
+++Word #4 is 'string'
+++Word #5 is 'This'
+++Word #6 is 'is'
+++Word #7 is 'normal'
+++Word #8 is 'string'
+++Word #9 is 'This'
+++Word #10 is 'is'
+++Word #11 is 'normal'
+++Word #12 is 'string'
+++Word #13 is 'This'
+++Word #14 is 'is'
+++Word #15 is 'normal'
+++Word #16 is 'string'
+++Word #17 is 'This'
+++Word #18 is 'is'
+++Word #19 is 'normal'
+++Word #20 is 'string'
+++Word #21 is 'This'
+++Word #22 is 'is'
+++Word #23 is 'normal'
+++Word #24 is 'string'
+++Word #25 is 'This'
+++Word #26 is 'is'
+++Word #27 is 'normal'
+++Word #28 is 'string'
+++Word #29 is 'This'
+++Word #30 is 'is'
+++Word #31 is 'normal'
+++Word #32 is 'string'
+++Word #33 is 'This'
+++Word #34 is 'is'
+++Word #35 is 'normal'
+++Word #36 is 'string'
+++Word #37 is 'This'
+++Word #38 is 'is'
+++Word #39 is 'normal'
+++Word #40 is 'string'
+++Word #41 is 'This'
+++Word #42 is 'is'
+++Word #43 is 'normal'
+++Word #44 is 'string'
+++Word #45 is 'This'
+++Word #46 is 'is'
+++Word #47 is 'normal'
+++Word #48 is 'string'
+++Word #49 is 'This'
+++Word #50 is 'is'
+++Word #51 is 'normal'
+++Word #52 is 'string'
+++Word #53 is 'This'
+++Word #54 is 'is'
+++Word #55 is 'norm'
+++Type a few words separated by space (q - to quit):
+++Word #1 is 'l'
+++Word #2 is 'string'
+++Word #3 is 'This'
+++Word #4 is 'is'
+++Word #5 is 'normal'
+++Word #6 is 'string'
+++Word #7 is 'This'
+++Word #8 is 'is'
+++Word #9 is 'normal'
+++Word #10 is 'string'
+++Word #11 is 'This'
+++Word #12 is 'is'
+++Word #13 is 'normal'
+++Word #14 is 'string'
+++Word #15 is 'This'
+++Word #16 is 'is'
+++Word #17 is 'normal'
+++Word #18 is 'string'
+++Word #19 is 'This'
+++Word #20 is 'is'
+++Word #21 is 'normal'
+++Word #22 is 'string'
++diff --git a/tokenizing.c b/tokenizing.c
++new file mode 100644
++index 0000000..075a81b
++--- /dev/null
+++++ b/tokenizing.c
++@@ -0,0 +1,34 @@
+++// TOKENIZING MODULE SOURCE
+++#define _CRT_SECURE_NO_WARNINGS
+++#define BUFFER_SIZE 300           
+++#include "tokenizing.h"			  // To include the header file "tokenizing.h"
+++
+++// V1
+++void tokenizing(void) 
+++{
+++	printf ("*** Start of Tokenizing Words Demo ***\n");
+++	char words [BUFFER_SIZE]; 
+++	char* nextWord = NULL;    // Initializing 'nextWord' variable with NULL
+++	int wordsCounter;         
+++	do                        
+++	{
+++		printf ("Type a few words reparated by space (q - to quit):\n");    
+++		fgets (words, BUFFER_SIZE, stdin);								    
+++		words [strlen(words) - 1] = '\0';	    // to put NULL at the end of users' input
+++		if (strcmp(words, "q") != 0)			
+++		{
+++			nextWord = strtok(words, " ");		// Use 'strtok' function on words where delimiter is space(s)
+++			wordsCounter = 1;					
+++			while (nextWord)					
+++			{
+++				printf ("Word #%d is \'%s\'\n", wordsCounter++, nextWord);  // Print different words which are input by users
+++				nextWord = strtok (NULL, " ");								// Check if any token left to retrieve
+++			}
+++		}
+++	}while (strcmp(words, "q") != 0);           
+++	printf ("*** End of Tokenizing Words Demo ***\n\n");					
+++}
+++int main()           // Main function to run the code
+++{
+++	tokenizing();    
+++}
++\ No newline at end of file
++diff --git a/tokenizing.h b/tokenizing.h
++new file mode 100644
++index 0000000..535efd9
++--- /dev/null
+++++ b/tokenizing.h
++@@ -0,0 +1,8 @@
+++#ifndef _TOKENIZING_H_  // Prevent multiple inclusion of same header file
+++#define _TOKENIZING_H_  
+++#include <stdio.h>
+++#include <string.h>		// To define functions for manipulating arrays of characters
+++void tokenizing (void); 
+++#endif
+++
+++
++diff --git a/x64/Debug/Final Project.exe b/x64/Debug/Final Project.exe
++new file mode 100644
++index 0000000..39649be
++Binary files /dev/null and b/x64/Debug/Final Project.exe differ
++diff --git a/x64/Debug/Final Project.exe.recipe b/x64/Debug/Final Project.exe.recipe
++new file mode 100644
++index 0000000..7735a33
++--- /dev/null
+++++ b/x64/Debug/Final Project.exe.recipe	
++@@ -0,0 +1,11 @@
+++﻿<?xml version="1.0" encoding="utf-8"?>
+++<Project>
+++  <ProjectOutputs>
+++    <ProjectOutput>
+++      <FullPath>C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe</FullPath>
+++    </ProjectOutput>
+++  </ProjectOutputs>
+++  <ContentFiles />
+++  <SatelliteDlls />
+++  <NonRecipeFileRefs />
+++</Project>
++\ No newline at end of file
++diff --git a/x64/Debug/Final Project.ilk b/x64/Debug/Final Project.ilk
++new file mode 100644
++index 0000000..0a5257b
++Binary files /dev/null and b/x64/Debug/Final Project.ilk differ
++diff --git a/x64/Debug/Final Project.log b/x64/Debug/Final Project.log
++new file mode 100644
++index 0000000..8f87944
++--- /dev/null
+++++ b/x64/Debug/Final Project.log	
++@@ -0,0 +1,3 @@
+++﻿  tokenizing.c
+++  LINK : C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe not found or not built by the last incremental link; performing full link
+++  Final Project.vcxproj -> C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe
++diff --git a/x64/Debug/Final Project.pdb b/x64/Debug/Final Project.pdb
++new file mode 100644
++index 0000000..ef7655a
++Binary files /dev/null and b/x64/Debug/Final Project.pdb differ
++diff --git a/x64/Debug/Final Project.tlog/CL.command.1.tlog b/x64/Debug/Final Project.tlog/CL.command.1.tlog
++new file mode 100644
++index 0000000..9d48dc7
++Binary files /dev/null and b/x64/Debug/Final Project.tlog/CL.command.1.tlog differ
++diff --git a/x64/Debug/Final Project.tlog/CL.read.1.tlog b/x64/Debug/Final Project.tlog/CL.read.1.tlog
++new file mode 100644
++index 0000000..418abb3
++Binary files /dev/null and b/x64/Debug/Final Project.tlog/CL.read.1.tlog differ
++diff --git a/x64/Debug/Final Project.tlog/CL.write.1.tlog b/x64/Debug/Final Project.tlog/CL.write.1.tlog
++new file mode 100644
++index 0000000..133932f
++Binary files /dev/null and b/x64/Debug/Final Project.tlog/CL.write.1.tlog differ
++diff --git a/x64/Debug/Final Project.tlog/Final Project.lastbuildstate b/x64/Debug/Final Project.tlog/Final Project.lastbuildstate
++new file mode 100644
++index 0000000..8b38596
++--- /dev/null
+++++ b/x64/Debug/Final Project.tlog/Final Project.lastbuildstate	
++@@ -0,0 +1,2 @@
+++PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.31.31103:TargetPlatformVersion=10.0.19041.0:
+++Debug|x64|C:\Users\nguye\Documents\CPR101\Final Project\Final Project\|
++diff --git a/x64/Debug/Final Project.tlog/link.command.1.tlog b/x64/Debug/Final Project.tlog/link.command.1.tlog
++new file mode 100644
++index 0000000..5ac90bb
++Binary files /dev/null and b/x64/Debug/Final Project.tlog/link.command.1.tlog differ
++diff --git a/x64/Debug/Final Project.tlog/link.read.1.tlog b/x64/Debug/Final Project.tlog/link.read.1.tlog
++new file mode 100644
++index 0000000..7ea0b88
++Binary files /dev/null and b/x64/Debug/Final Project.tlog/link.read.1.tlog differ
++diff --git a/x64/Debug/Final Project.tlog/link.write.1.tlog b/x64/Debug/Final Project.tlog/link.write.1.tlog
++new file mode 100644
++index 0000000..f2e49e0
++Binary files /dev/null and b/x64/Debug/Final Project.tlog/link.write.1.tlog differ
++diff --git a/x64/Debug/Final Project.vcxproj.FileListAbsolute.txt b/x64/Debug/Final Project.vcxproj.FileListAbsolute.txt
++new file mode 100644
++index 0000000..f411f54
++--- /dev/null
+++++ b/x64/Debug/Final Project.vcxproj.FileListAbsolute.txt	
++@@ -0,0 +1 @@
+++C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe
++diff --git a/x64/Debug/tokenizing.obj b/x64/Debug/tokenizing.obj
++new file mode 100644
++index 0000000..683dee0
++Binary files /dev/null and b/x64/Debug/tokenizing.obj differ
++diff --git a/x64/Debug/vc143.idb b/x64/Debug/vc143.idb
++new file mode 100644
++index 0000000..896fcb0
++Binary files /dev/null and b/x64/Debug/vc143.idb differ
++diff --git a/x64/Debug/vc143.pdb b/x64/Debug/vc143.pdb
++new file mode 100644
++index 0000000..3649fa2
++Binary files /dev/null and b/x64/Debug/vc143.pdb differ
+diff --git a/main.exe b/main.exe
+new file mode 100644
+index 0000000..658f33b
+Binary files /dev/null and b/main.exe differ
+diff --git a/tokenizing version 2/.vs/tokenizing version 2/v17/.suo b/tokenizing version 2/.vs/tokenizing version 2/v17/.suo
+new file mode 100644
+index 0000000..677cebb
+Binary files /dev/null and b/tokenizing version 2/.vs/tokenizing version 2/v17/.suo differ
+diff --git a/tokenizing version 2/.vs/tokenizing version 2/v17/Browse.VC.db b/tokenizing version 2/.vs/tokenizing version 2/v17/Browse.VC.db
+new file mode 100644
+index 0000000..e606dbd
+Binary files /dev/null and b/tokenizing version 2/.vs/tokenizing version 2/v17/Browse.VC.db differ
+diff --git a/tokenizing.c b/tokenizing.c
+deleted file mode 100644
+index 2f1f4bc..0000000
+--- a/tokenizing.c
++++ /dev/null
+@@ -1,39 +0,0 @@
+-/*
+--------------------------------------------------
+-Full Name  : Ngoc Diem Thy Nguyen
+-Student ID#: 105310221
+-Email      : nnguyen90@myseneca.ca
+-Section    : NEE
+--------------------------------------------------
+-*/
+-
+-// TOKENIZING MODULE SOURCE
+-#define _CRT_SECURE_NO_WARNINGS
+-#define BUFFER_SIZE 300           
+-#include "tokenizing.h"			  // To include the header file "tokenizing.h"
+-
+-// V1
+-void tokenizing(void) 
+-{
+-	printf ("*** Start of Tokenizing Words Demo ***\n");
+-	char words [BUFFER_SIZE]; 
+-	char* nextWord = NULL;    // Initializing 'nextWord' variable with NULL
+-	int wordsCounter;         
+-	do                        
+-	{
+-		printf ("Type a few words reparated by space (q - to quit):\n");    
+-		fgets (words, BUFFER_SIZE, stdin);								    
+-		words [strlen(words) - 1] = '\0';	    // to put NULL at the end of users' input
+-		if (strcmp(words, "q") != 0)			
+-		{
+-			nextWord = strtok(words, " ");		// Use 'strtok' function on words where delimiter is space(s)
+-			wordsCounter = 1;					
+-			while (nextWord)					
+-			{
+-				printf ("Word #%d is \'%s\'\n", wordsCounter++, nextWord);  // Print different words which are input by users
+-				nextWord = strtok (NULL, " ");								// Check if any token left to retrieve
+-			}
+-		}
+-	}while (strcmp(words, "q") != 0);           
+-	printf ("*** End of Tokenizing Words Demo ***\n\n");					
+-}
+diff --git a/tokenizing_git_log.txt b/tokenizing_git_log.txt
+index f4533ad..1086380 100644
+--- a/tokenizing_git_log.txt
++++ b/tokenizing_git_log.txt
+@@ -1,33 +1,199 @@
+-nguye@LAPTOP-1IUI7EAN MINGW64 ~/Documents/CPR101/Final Project/Final Project (master)
+-$ git status
+-On branch master
+-Your branch is up to date with 'Final_Project/master'.
+-
+-Changes not staged for commit:
+-  (use "git add <file>..." to update what will be committed)
+-  (use "git restore <file>..." to discard changes in working directory)
+-        modified:   tokenizing_v2.c
+-        modified:   tokenizing_v2.h
++commit d0b20202936108535966a53f1dcc216e25321afd
++Author: Thy <nguyen.thy2986@gmail.com>
++Date:   Fri Aug 12 22:50:13 2022 -0400
+ 
+-Untracked files:
+-  (use "git add <file>..." to include in what will be committed)
+-        tokenizing version 2/
+-        tokenizing_both_functions_separated.c
+-        tokenizing_v2_combine 2 versions.c
++    version_2
+ 
+-no changes added to commit (use "git add" and/or "git commit -a")
++diff --git a/tokenizing_v2.c b/tokenizing_v2.c
++index 9984379..b5088bb 100644
++--- a/tokenizing_v2.c
+++++ b/tokenizing_v2.c
++@@ -1,37 +1,67 @@
+++/*
+++-------------------------------------------------
+++Full Name  : Ngoc Diem Thy Nguyen
+++Student ID#: 105310221
+++Email      : nnguyen90@myseneca.ca
+++Section    : NEE
+++-------------------------------------------------
+++*/
+++
+++// TOKENIZING MODULE SOURCE VERSION 2
+++
++ #define _CRT_SECURE_NO_WARNINGS // _CRT_SECURE_NO_WARNINGS means you don't want the compiler to suggest the secure versions of the library functions, e.g. scanf_s when you use scanf
++ #define BUFFER_SIZE 300
++-#include "tokenizing.h" // Include header file created as "tokenizing.h"
+++#include "tokenizing_v2.h" // Include header file created as "tokenizing.h"
++ 
++-void tokenizing(void) {
++-	printf("*** Start of Tokenizing Words and Phrases Demo ***\n"); // print statement to tell the user about the Demo
++-	char* nextWord = NULL; // initialize nextWord with NULL
++-	int wordsCounter; // Declare wordsCounter Variable
++-	char phrases[BUFFER_SIZE]; // Declare phrases array
++-	char* nextPhrase = NULL; // initialize nextPhrase with NULL
++-	int phrasesCounter; // Declare phrasesCounter Variable
++-	do { // Start DO...WHILE Loop
++-		printf("\nType a few Phrases separated by comma with words separated by space (q - to quit):\n"); // print statement for asking user to type few phrases or q to quit
++-		fgets(phrases, BUFFER_SIZE, stdin); // gets input from user
++-		phrases[strlen(phrases) - 1] = '\0'; // put null at the end of user input
++-		if(strcmp(phrases, "q") != 0) { // check if phrases has q or not (To check whether user want to continue or terminate)
++-            char *p = strtok_r(phrases, ",", &nextPhrase); // used strtok_r() on phrases separated comma(i.e ",")
++-            phrasesCounter = 1; // Initialized phrasesCounter as 1
++-            wordsCounter = 1; // Initialized wordsCounter as 1
++-            while(p) { // start WHILE Loop to traverse nextPhrase separated by comma
++-                printf("Phrase #%d is \'%s\'\n", phrasesCounter++, p); // print different phrase in the sentence entered by user
++-                char *q = strtok_r(p, " ", &nextWord); // used strtok_r() on words separated by space(i.e " ")
++-                while(q) { // start WHILE Loop to traverse nextword separated by space
++-                    printf("\tword #%d is \'%s\'\n", wordsCounter++, q); // print different words in the phrase entered by user
++-                    q = strtok_r(NULL, " ",&nextWord); // check if there are any tokens left to retrieve
++-                }
++-                p = strtok_r(NULL, ",", &nextPhrase); // check if there are any tokens left to retrieve
++-            }
+++void tokenizing(void) 
+++{
+++	printf("*** Start of Tokenizing Words Demo ***\n");
+++	char* nextWord = NULL;
+++	char words[BUFFER_SIZE];
+++	int wordsCounter;
+++	do 
+++	{
+++		printf("Type a few words separated by space (q - to quit):\n");
+++		fgets(words, BUFFER_SIZE, stdin);
+++		words[strlen(words) - 1] = '\0';
+++		if (strcmp(words, "q") != 0) 
+++		{
+++			nextWord = strtok(words, " ");
+++			wordsCounter = 1;
+++			while (nextWord) 
+++			{
+++				printf("Word #%d is \'%s\'\n", wordsCounter++, nextWord);
+++				nextWord = strtok(NULL, " ");
+++			}
++ 		}
++-	} while(strcmp(phrases, "q") != 0); // DO...WHILE Loop end condition
++-	printf("*** End of Tokenizing Words and Phrases Demo ***\n\n"); // print statement for telling user the end of Demo
+++	} while (strcmp(words, "q") != 0);
+++	printf("*** End of Tokenizing Words Demo ***\n\n");
+++
+++	printf("*** Start of Tokenizing Phrases Demo ***\n");
+++	char phrases[BUFFER_SIZE];
+++	char* nextPhrase = NULL;
+++	int phrasesCounter;
+++	do 
+++	{
+++		printf("Type a few Phrases separated by comma (q - to quit):\n");
+++		fgets(phrases, BUFFER_SIZE, stdin);
+++		phrases[strlen(phrases) - 1] = '\0';
+++		if (strcmp(phrases, "q") != 0) 
+++		{
+++			nextPhrase = strtok(phrases, ",");
+++			phrasesCounter = 1;
+++			while (nextPhrase)
+++			{
+++				printf("Phrase #%d is \'%s\'\n", phrasesCounter++, nextPhrase);
+++				nextPhrase = strtok(NULL, ",");
+++			}
+++		}
+++	} while (strcmp(phrases, "q") != 0);
+++	printf("*** End of Tokenizing Phrases Demo ***\n\n");
++ }
++ 
++-//Uncomment below main() function to run the code and check for different inputs
++-int main() {
++-    tokenizing();
+++
+++int main() 
+++{
+++	tokenizing();
++ }
++diff --git a/tokenizing_v2.h b/tokenizing_v2.h
++index 231d73c..535b7f1 100644
++--- a/tokenizing_v2.h
+++++ b/tokenizing_v2.h
++@@ -1,6 +1,15 @@
++-#ifndef _TOKENIZING_H_ // This prevent from the multiple inclusion of same header file multiple time.
++-#define _TOKENIZING_H_
++-#include <stdio.h> // The stdio.h header defines three variable types, several macros, and various functions for performing input and output
++-#include <string.h> // The string.h header defines one variable type, one macro, and various functions for manipulating arrays of characters
++-void tokenizing(void); // Function Declaration
+++/*
+++-------------------------------------------------
+++Full Name  : Ngoc Diem Thy Nguyen
+++Student ID#: 105310221
+++Email      : nnguyen90@myseneca.ca
+++Section    : NEE
+++-------------------------------------------------
+++*/
+++
+++#ifndef _TOKENIZING_V2_H_ // This prevent from the multiple inclusion of same header file multiple time.
+++#define _TOKENIZING_V2_H_ 
+++#include <stdio.h> 
+++#include <string.h> 
+++void tokenizing(void);
++ #endif
++diff --git a/tokenizing_v2.h.gch b/tokenizing_v2.h.gch
++new file mode 100644
++index 0000000..78962c2
++Binary files /dev/null and b/tokenizing_v2.h.gch differ
+ 
+-nguye@LAPTOP-1IUI7EAN MINGW64 ~/Documents/CPR101/Final Project/Final Project (master)
+-$ git log
+-commit f64bf9d2510a54c5781d9a205fa8c25ab52b2c28 (HEAD -> master, Final_Project/master)
++commit f64bf9d2510a54c5781d9a205fa8c25ab52b2c28
+ Author: Thy <nguyen.thy2986@gmail.com>
+ Date:   Thu Aug 11 13:09:39 2022 -0400
+ 
+     version_2
+ 
+-commit 29ad9a407ae67e3d662c30eac36ab48ab355a36e
+-Author: Thy <nguyen.thy2986@gmail.com>
+-Date:   Wed Aug 3 11:22:05 2022 -0400
+-
+-    �version_1�
+-
++diff --git a/tokenizing_v2.c b/tokenizing_v2.c
++new file mode 100644
++index 0000000..9984379
++--- /dev/null
+++++ b/tokenizing_v2.c
++@@ -0,0 +1,37 @@
+++#define _CRT_SECURE_NO_WARNINGS // _CRT_SECURE_NO_WARNINGS means you don't want the compiler to suggest the secure versions of the library functions, e.g. scanf_s when you use scanf
+++#define BUFFER_SIZE 300
+++#include "tokenizing.h" // Include header file created as "tokenizing.h"
+++
+++void tokenizing(void) {
+++	printf("*** Start of Tokenizing Words and Phrases Demo ***\n"); // print statement to tell the user about the Demo
+++	char* nextWord = NULL; // initialize nextWord with NULL
+++	int wordsCounter; // Declare wordsCounter Variable
+++	char phrases[BUFFER_SIZE]; // Declare phrases array
+++	char* nextPhrase = NULL; // initialize nextPhrase with NULL
+++	int phrasesCounter; // Declare phrasesCounter Variable
+++	do { // Start DO...WHILE Loop
+++		printf("\nType a few Phrases separated by comma with words separated by space (q - to quit):\n"); // print statement for asking user to type few phrases or q to quit
+++		fgets(phrases, BUFFER_SIZE, stdin); // gets input from user
+++		phrases[strlen(phrases) - 1] = '\0'; // put null at the end of user input
+++		if(strcmp(phrases, "q") != 0) { // check if phrases has q or not (To check whether user want to continue or terminate)
+++            char *p = strtok_r(phrases, ",", &nextPhrase); // used strtok_r() on phrases separated comma(i.e ",")
+++            phrasesCounter = 1; // Initialized phrasesCounter as 1
+++            wordsCounter = 1; // Initialized wordsCounter as 1
+++            while(p) { // start WHILE Loop to traverse nextPhrase separated by comma
+++                printf("Phrase #%d is \'%s\'\n", phrasesCounter++, p); // print different phrase in the sentence entered by user
+++                char *q = strtok_r(p, " ", &nextWord); // used strtok_r() on words separated by space(i.e " ")
+++                while(q) { // start WHILE Loop to traverse nextword separated by space
+++                    printf("\tword #%d is \'%s\'\n", wordsCounter++, q); // print different words in the phrase entered by user
+++                    q = strtok_r(NULL, " ",&nextWord); // check if there are any tokens left to retrieve
+++                }
+++                p = strtok_r(NULL, ",", &nextPhrase); // check if there are any tokens left to retrieve
+++            }
+++		}
+++	} while(strcmp(phrases, "q") != 0); // DO...WHILE Loop end condition
+++	printf("*** End of Tokenizing Words and Phrases Demo ***\n\n"); // print statement for telling user the end of Demo
+++}
+++
+++//Uncomment below main() function to run the code and check for different inputs
+++int main() {
+++    tokenizing();
+++}
++diff --git a/tokenizing_v2.h b/tokenizing_v2.h
++new file mode 100644
++index 0000000..231d73c
++--- /dev/null
+++++ b/tokenizing_v2.h
++@@ -0,0 +1,6 @@
+++#ifndef _TOKENIZING_H_ // This prevent from the multiple inclusion of same header file multiple time.
+++#define _TOKENIZING_H_
+++#include <stdio.h> // The stdio.h header defines three variable types, several macros, and various functions for performing input and output
+++#include <string.h> // The string.h header defines one variable type, one macro, and various functions for manipulating arrays of characters
+++void tokenizing(void); // Function Declaration
+++#endif
+diff --git a/tokenizing_v2.h b/tokenizing_v2.h
+deleted file mode 100644
+index 535b7f1..0000000
+--- a/tokenizing_v2.h
++++ /dev/null
+@@ -1,15 +0,0 @@
+-/*
+--------------------------------------------------
+-Full Name  : Ngoc Diem Thy Nguyen
+-Student ID#: 105310221
+-Email      : nnguyen90@myseneca.ca
+-Section    : NEE
+--------------------------------------------------
+-*/
+-
+-#ifndef _TOKENIZING_V2_H_ // This prevent from the multiple inclusion of same header file multiple time.
+-#define _TOKENIZING_V2_H_ 
+-#include <stdio.h> 
+-#include <string.h> 
+-void tokenizing(void);
+-#endif
+diff --git a/tokenizing_v2.c b/tokenizing_v3.c
+similarity index 68%
+rename from tokenizing_v2.c
+rename to tokenizing_v3.c
+index b5088bb..84a9cf7 100644
+--- a/tokenizing_v2.c
++++ b/tokenizing_v3.c
+@@ -7,7 +7,7 @@ Section    : NEE
+ -------------------------------------------------
+ */
+ 
+-// TOKENIZING MODULE SOURCE VERSION 2
++// TOKENIZING MODULE SOURCE VERSION 3
+ 
+ #define _CRT_SECURE_NO_WARNINGS // _CRT_SECURE_NO_WARNINGS means you don't want the compiler to suggest the secure versions of the library functions, e.g. scanf_s when you use scanf
+ #define BUFFER_SIZE 300
+@@ -15,6 +15,8 @@ Section    : NEE
+ 
+ void tokenizing(void) 
+ {
++	// FUNCTION FOR WORDS
++
+ 	printf("*** Start of Tokenizing Words Demo ***\n");
+ 	char* nextWord = NULL;
+ 	char words[BUFFER_SIZE];
+@@ -37,6 +39,8 @@ void tokenizing(void)
+ 	} while (strcmp(words, "q") != 0);
+ 	printf("*** End of Tokenizing Words Demo ***\n\n");
+ 
++	// FUNCTION FOR PHRASES
++
+ 	printf("*** Start of Tokenizing Phrases Demo ***\n");
+ 	char phrases[BUFFER_SIZE];
+ 	char* nextPhrase = NULL;
+@@ -58,10 +62,30 @@ void tokenizing(void)
+ 		}
+ 	} while (strcmp(phrases, "q") != 0);
+ 	printf("*** End of Tokenizing Phrases Demo ***\n\n");
+-}
+ 
++	// FUNCTION FOR SENTENCES
+ 
+-int main() 
+-{
+-	tokenizing();
++	printf("*** Start of Tokenizing Sentences Demo ***\n"); 
++	char sentences[BUFFER_SIZE]; 
++	char* nextSentence = NULL; 
++	int sentencesCounter; 
++	do 
++	{ 
++		printf("Type a few sentences separated by dot (q - to quit):\n"); 
++		fgets(sentences, BUFFER_SIZE, stdin); 
++		sentences[strlen(sentences) - 1] = '\0'; 
++		if (strcmp(sentences, "q") != 0) 
++		{ 
++			nextSentence = strtok(sentences, "."); 
++			sentencesCounter = 1; 
++			while (nextSentence) {
++				printf("Sentence #%d is \'%s\'\n", sentencesCounter++, nextSentence); 
++				nextSentence = strtok(NULL, "."); 
++			}
++		}
++	} while (strcmp(sentences, "q") != 0); 
++	printf("*** End of Tokenizing Phrases Demo ***\n\n"); 
++
++	
+ }
++
+diff --git a/x64/Debug/Final Project.exe b/x64/Debug/Final Project.exe
+index 4e4500f..bb9a9b4 100644
+Binary files a/x64/Debug/Final Project.exe and b/x64/Debug/Final Project.exe differ
+diff --git a/x64/Debug/Final Project.exe.recipe b/x64/Debug/Final Project.exe.recipe
+index b8aabfc..7735a33 100644
+--- a/x64/Debug/Final Project.exe.recipe	
++++ b/x64/Debug/Final Project.exe.recipe	
+@@ -2,7 +2,7 @@
+ <Project>
+   <ProjectOutputs>
+     <ProjectOutput>
+-      <FullPath>C:\Users\nguye\Documents\CPR101\FinalProject\FinalProject\x64\Debug\Final Project.exe</FullPath>
++      <FullPath>C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe</FullPath>
+     </ProjectOutput>
+   </ProjectOutputs>
+   <ContentFiles />
+diff --git a/x64/Debug/Final Project.ilk b/x64/Debug/Final Project.ilk
+index 2a3aab1..8a0243f 100644
+Binary files a/x64/Debug/Final Project.ilk and b/x64/Debug/Final Project.ilk differ
+diff --git a/x64/Debug/Final Project.log b/x64/Debug/Final Project.log
+index 9845219..466c5c5 100644
+--- a/x64/Debug/Final Project.log	
++++ b/x64/Debug/Final Project.log	
+@@ -1,2 +1,4 @@
+ ﻿  main.c
+-  Final Project.vcxproj -> C:\Users\nguye\Documents\CPR101\FinalProject\FinalProject\x64\Debug\Final Project.exe
++  tokenizing_v3.c
++  Generating Code...
++  Final Project.vcxproj -> C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe
+diff --git a/x64/Debug/Final Project.pdb b/x64/Debug/Final Project.pdb
+index 135aeaa..386ff81 100644
+Binary files a/x64/Debug/Final Project.pdb and b/x64/Debug/Final Project.pdb differ
+diff --git a/x64/Debug/Final Project.tlog/CL.command.1.tlog b/x64/Debug/Final Project.tlog/CL.command.1.tlog
+index ee07b30..9d51668 100644
+Binary files a/x64/Debug/Final Project.tlog/CL.command.1.tlog and b/x64/Debug/Final Project.tlog/CL.command.1.tlog differ
+diff --git a/x64/Debug/Final Project.tlog/CL.read.1.tlog b/x64/Debug/Final Project.tlog/CL.read.1.tlog
+index 158653c..0527edb 100644
+Binary files a/x64/Debug/Final Project.tlog/CL.read.1.tlog and b/x64/Debug/Final Project.tlog/CL.read.1.tlog differ
+diff --git a/x64/Debug/Final Project.tlog/CL.write.1.tlog b/x64/Debug/Final Project.tlog/CL.write.1.tlog
+index cb24c31..a507c14 100644
+Binary files a/x64/Debug/Final Project.tlog/CL.write.1.tlog and b/x64/Debug/Final Project.tlog/CL.write.1.tlog differ
+diff --git a/x64/Debug/Final Project.tlog/Final Project.lastbuildstate b/x64/Debug/Final Project.tlog/Final Project.lastbuildstate
+index 4ea1590..8b38596 100644
+--- a/x64/Debug/Final Project.tlog/Final Project.lastbuildstate	
++++ b/x64/Debug/Final Project.tlog/Final Project.lastbuildstate	
+@@ -1,2 +1,2 @@
+ PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.31.31103:TargetPlatformVersion=10.0.19041.0:
+-Debug|x64|C:\Users\nguye\Documents\CPR101\FinalProject\FinalProject\|
++Debug|x64|C:\Users\nguye\Documents\CPR101\Final Project\Final Project\|
+diff --git a/x64/Debug/Final Project.tlog/link.command.1.tlog b/x64/Debug/Final Project.tlog/link.command.1.tlog
+index 8856d3d..e879c80 100644
+Binary files a/x64/Debug/Final Project.tlog/link.command.1.tlog and b/x64/Debug/Final Project.tlog/link.command.1.tlog differ
+diff --git a/x64/Debug/Final Project.tlog/link.read.1.tlog b/x64/Debug/Final Project.tlog/link.read.1.tlog
+index a4de3d0..bd34177 100644
+Binary files a/x64/Debug/Final Project.tlog/link.read.1.tlog and b/x64/Debug/Final Project.tlog/link.read.1.tlog differ
+diff --git a/x64/Debug/Final Project.tlog/link.write.1.tlog b/x64/Debug/Final Project.tlog/link.write.1.tlog
+index fefd422..a1defc8 100644
+Binary files a/x64/Debug/Final Project.tlog/link.write.1.tlog and b/x64/Debug/Final Project.tlog/link.write.1.tlog differ
+diff --git a/x64/Debug/main.obj b/x64/Debug/main.obj
+index 318fc56..5c70160 100644
+Binary files a/x64/Debug/main.obj and b/x64/Debug/main.obj differ
+diff --git a/x64/Debug/tokenizing_v2.obj b/x64/Debug/tokenizing_v2.obj
+new file mode 100644
+index 0000000..9baed39
+Binary files /dev/null and b/x64/Debug/tokenizing_v2.obj differ
+diff --git a/x64/Debug/tokenizing_v3.obj b/x64/Debug/tokenizing_v3.obj
+new file mode 100644
+index 0000000..b9310b7
+Binary files /dev/null and b/x64/Debug/tokenizing_v3.obj differ
+diff --git a/x64/Debug/vc143.idb b/x64/Debug/vc143.idb
+index 41e1e62..bea1695 100644
+Binary files a/x64/Debug/vc143.idb and b/x64/Debug/vc143.idb differ
+diff --git a/x64/Debug/vc143.pdb b/x64/Debug/vc143.pdb
+index ba87ffe..3f26eaa 100644
+Binary files a/x64/Debug/vc143.pdb and b/x64/Debug/vc143.pdb differ
+
+commit d0b20202936108535966a53f1dcc216e25321afd
+Author: Thy <nguyen.thy2986@gmail.com>
+Date:   Fri Aug 12 22:50:13 2022 -0400
+
+    version_2
+
+diff --git a/main.exe b/main.exe
+deleted file mode 100644
+index b8296fa..0000000
+Binary files a/main.exe and /dev/null differ
+diff --git a/tokenizing version 2/tokenizing version 2.vcxproj b/tokenizing version 2/tokenizing version 2.vcxproj
+new file mode 100644
+index 0000000..e9c583e
+--- /dev/null
++++ b/tokenizing version 2/tokenizing version 2.vcxproj	
+@@ -0,0 +1,150 @@
++<?xml version="1.0" encoding="utf-8"?>
++<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++  <ItemGroup Label="ProjectConfigurations">
++    <ProjectConfiguration Include="Debug|Win32">
++      <Configuration>Debug</Configuration>
++      <Platform>Win32</Platform>
++    </ProjectConfiguration>
++    <ProjectConfiguration Include="Release|Win32">
++      <Configuration>Release</Configuration>
++      <Platform>Win32</Platform>
++    </ProjectConfiguration>
++    <ProjectConfiguration Include="Debug|x64">
++      <Configuration>Debug</Configuration>
++      <Platform>x64</Platform>
++    </ProjectConfiguration>
++    <ProjectConfiguration Include="Release|x64">
++      <Configuration>Release</Configuration>
++      <Platform>x64</Platform>
++    </ProjectConfiguration>
++  </ItemGroup>
++  <PropertyGroup Label="Globals">
++    <VCProjectVersion>16.0</VCProjectVersion>
++    <Keyword>Win32Proj</Keyword>
++    <ProjectGuid>{c257fda0-6031-4c3e-b1ba-ec316908f02e}</ProjectGuid>
++    <RootNamespace>tokenizingversion2</RootNamespace>
++    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
++  </PropertyGroup>
++  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
++    <ConfigurationType>Application</ConfigurationType>
++    <UseDebugLibraries>true</UseDebugLibraries>
++    <PlatformToolset>v143</PlatformToolset>
++    <CharacterSet>Unicode</CharacterSet>
++  </PropertyGroup>
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
++    <ConfigurationType>Application</ConfigurationType>
++    <UseDebugLibraries>false</UseDebugLibraries>
++    <PlatformToolset>v143</PlatformToolset>
++    <WholeProgramOptimization>true</WholeProgramOptimization>
++    <CharacterSet>Unicode</CharacterSet>
++  </PropertyGroup>
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
++    <ConfigurationType>Application</ConfigurationType>
++    <UseDebugLibraries>true</UseDebugLibraries>
++    <PlatformToolset>v143</PlatformToolset>
++    <CharacterSet>Unicode</CharacterSet>
++  </PropertyGroup>
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
++    <ConfigurationType>Application</ConfigurationType>
++    <UseDebugLibraries>false</UseDebugLibraries>
++    <PlatformToolset>v143</PlatformToolset>
++    <WholeProgramOptimization>true</WholeProgramOptimization>
++    <CharacterSet>Unicode</CharacterSet>
++  </PropertyGroup>
++  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
++  <ImportGroup Label="ExtensionSettings">
++  </ImportGroup>
++  <ImportGroup Label="Shared">
++  </ImportGroup>
++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
++  </ImportGroup>
++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
++  </ImportGroup>
++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
++  </ImportGroup>
++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
++  </ImportGroup>
++  <PropertyGroup Label="UserMacros" />
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
++    <LinkIncremental>true</LinkIncremental>
++  </PropertyGroup>
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
++    <LinkIncremental>false</LinkIncremental>
++  </PropertyGroup>
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
++    <LinkIncremental>true</LinkIncremental>
++  </PropertyGroup>
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
++    <LinkIncremental>false</LinkIncremental>
++  </PropertyGroup>
++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
++    <ClCompile>
++      <WarningLevel>Level3</WarningLevel>
++      <SDLCheck>true</SDLCheck>
++      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
++      <ConformanceMode>true</ConformanceMode>
++    </ClCompile>
++    <Link>
++      <SubSystem>Console</SubSystem>
++      <GenerateDebugInformation>true</GenerateDebugInformation>
++    </Link>
++  </ItemDefinitionGroup>
++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
++    <ClCompile>
++      <WarningLevel>Level3</WarningLevel>
++      <FunctionLevelLinking>true</FunctionLevelLinking>
++      <IntrinsicFunctions>true</IntrinsicFunctions>
++      <SDLCheck>true</SDLCheck>
++      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
++      <ConformanceMode>true</ConformanceMode>
++    </ClCompile>
++    <Link>
++      <SubSystem>Console</SubSystem>
++      <EnableCOMDATFolding>true</EnableCOMDATFolding>
++      <OptimizeReferences>true</OptimizeReferences>
++      <GenerateDebugInformation>true</GenerateDebugInformation>
++    </Link>
++  </ItemDefinitionGroup>
++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
++    <ClCompile>
++      <WarningLevel>Level3</WarningLevel>
++      <SDLCheck>true</SDLCheck>
++      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
++      <ConformanceMode>true</ConformanceMode>
++    </ClCompile>
++    <Link>
++      <SubSystem>Console</SubSystem>
++      <GenerateDebugInformation>true</GenerateDebugInformation>
++    </Link>
++  </ItemDefinitionGroup>
++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
++    <ClCompile>
++      <WarningLevel>Level3</WarningLevel>
++      <FunctionLevelLinking>true</FunctionLevelLinking>
++      <IntrinsicFunctions>true</IntrinsicFunctions>
++      <SDLCheck>true</SDLCheck>
++      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
++      <ConformanceMode>true</ConformanceMode>
++    </ClCompile>
++    <Link>
++      <SubSystem>Console</SubSystem>
++      <EnableCOMDATFolding>true</EnableCOMDATFolding>
++      <OptimizeReferences>true</OptimizeReferences>
++      <GenerateDebugInformation>true</GenerateDebugInformation>
++    </Link>
++  </ItemDefinitionGroup>
++  <ItemGroup>
++    <ClInclude Include="..\tokenizing_v2.h" />
++  </ItemGroup>
++  <ItemGroup>
++    <ClCompile Include="..\tokenizing_v2.c" />
++  </ItemGroup>
++  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
++  <ImportGroup Label="ExtensionTargets">
++  </ImportGroup>
++</Project>
+\ No newline at end of file
+diff --git a/tokenizing version 2/tokenizing version 2.vcxproj.filters b/tokenizing version 2/tokenizing version 2.vcxproj.filters
+new file mode 100644
+index 0000000..2fb57fd
+--- /dev/null
++++ b/tokenizing version 2/tokenizing version 2.vcxproj.filters	
+@@ -0,0 +1,27 @@
++﻿<?xml version="1.0" encoding="utf-8"?>
++<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++  <ItemGroup>
++    <Filter Include="Source Files">
++      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
++      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
++    </Filter>
++    <Filter Include="Header Files">
++      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
++      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
++    </Filter>
++    <Filter Include="Resource Files">
++      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
++      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
++    </Filter>
++  </ItemGroup>
++  <ItemGroup>
++    <ClInclude Include="..\tokenizing_v2.h">
++      <Filter>Header Files</Filter>
++    </ClInclude>
++  </ItemGroup>
++  <ItemGroup>
++    <ClCompile Include="..\tokenizing_v2.c">
++      <Filter>Source Files</Filter>
++    </ClCompile>
++  </ItemGroup>
++</Project>
+\ No newline at end of file
+diff --git a/tokenizing version 2/tokenizing version 2.vcxproj.user b/tokenizing version 2/tokenizing version 2.vcxproj.user
+new file mode 100644
+index 0000000..88a5509
+--- /dev/null
++++ b/tokenizing version 2/tokenizing version 2.vcxproj.user	
+@@ -0,0 +1,4 @@
++﻿<?xml version="1.0" encoding="utf-8"?>
++<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++  <PropertyGroup />
++</Project>
+\ No newline at end of file
+diff --git a/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.command.1.tlog b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.command.1.tlog
+new file mode 100644
+index 0000000..efe10ea
+Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.command.1.tlog differ
+diff --git a/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.read.1.tlog b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.read.1.tlog
+new file mode 100644
+index 0000000..f68239a
+Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.read.1.tlog differ
+diff --git a/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.write.1.tlog b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.write.1.tlog
+new file mode 100644
+index 0000000..34b35fd
+Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/CL.write.1.tlog differ
+diff --git a/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.command.1.tlog b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.command.1.tlog
+new file mode 100644
+index 0000000..b0e1623
+Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.command.1.tlog differ
+diff --git a/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.read.1.tlog b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.read.1.tlog
+new file mode 100644
+index 0000000..8fb4010
+Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.read.1.tlog differ
+diff --git a/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.write.1.tlog b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.write.1.tlog
+new file mode 100644
+index 0000000..ba6a541
+Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/link.write.1.tlog differ
+diff --git a/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/tokenizing version 2.lastbuildstate b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/tokenizing version 2.lastbuildstate
+new file mode 100644
+index 0000000..e99e944
+--- /dev/null
++++ b/tokenizing version 2/x64/Debug/tokenizi.c257fda0.tlog/tokenizing version 2.lastbuildstate	
+@@ -0,0 +1,2 @@
++PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.31.31103:TargetPlatformVersion=10.0.19041.0:
++Debug|x64|C:\Users\nguye\Documents\CPR101\Final Project\Final Project\tokenizing version 2\|
+diff --git a/tokenizing version 2/x64/Debug/tokenizing version 2.exe b/tokenizing version 2/x64/Debug/tokenizing version 2.exe
+new file mode 100644
+index 0000000..69a4157
+Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizing version 2.exe differ
+diff --git a/tokenizing version 2/x64/Debug/tokenizing version 2.exe.recipe b/tokenizing version 2/x64/Debug/tokenizing version 2.exe.recipe
+new file mode 100644
+index 0000000..6ada4d2
+--- /dev/null
++++ b/tokenizing version 2/x64/Debug/tokenizing version 2.exe.recipe	
+@@ -0,0 +1,11 @@
++﻿<?xml version="1.0" encoding="utf-8"?>
++<Project>
++  <ProjectOutputs>
++    <ProjectOutput>
++      <FullPath>C:\Users\nguye\Documents\CPR101\Final Project\Final Project\tokenizing version 2\x64\Debug\tokenizing version 2.exe</FullPath>
++    </ProjectOutput>
++  </ProjectOutputs>
++  <ContentFiles />
++  <SatelliteDlls />
++  <NonRecipeFileRefs />
++</Project>
+\ No newline at end of file
+diff --git a/tokenizing version 2/x64/Debug/tokenizing version 2.ilk b/tokenizing version 2/x64/Debug/tokenizing version 2.ilk
+new file mode 100644
+index 0000000..2898963
+Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizing version 2.ilk differ
+diff --git a/tokenizing version 2/x64/Debug/tokenizing version 2.log b/tokenizing version 2/x64/Debug/tokenizing version 2.log
+new file mode 100644
+index 0000000..b391236
+--- /dev/null
++++ b/tokenizing version 2/x64/Debug/tokenizing version 2.log	
+@@ -0,0 +1,2 @@
++﻿  tokenizing_v2.c
++  tokenizing version 2.vcxproj -> C:\Users\nguye\Documents\CPR101\Final Project\Final Project\tokenizing version 2\x64\Debug\tokenizing version 2.exe
+diff --git a/tokenizing version 2/x64/Debug/tokenizing version 2.pdb b/tokenizing version 2/x64/Debug/tokenizing version 2.pdb
+new file mode 100644
+index 0000000..70c0e75
+Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizing version 2.pdb differ
+diff --git a/tokenizing version 2/x64/Debug/tokenizing version 2.vcxproj.FileListAbsolute.txt b/tokenizing version 2/x64/Debug/tokenizing version 2.vcxproj.FileListAbsolute.txt
+new file mode 100644
+index 0000000..34f421d
+--- /dev/null
++++ b/tokenizing version 2/x64/Debug/tokenizing version 2.vcxproj.FileListAbsolute.txt	
+@@ -0,0 +1 @@
++C:\Users\nguye\Documents\CPR101\Final Project\Final Project\tokenizing version 2\x64\Debug\tokenizing version 2.exe
+diff --git a/tokenizing version 2/x64/Debug/tokenizing_v2.obj b/tokenizing version 2/x64/Debug/tokenizing_v2.obj
+new file mode 100644
+index 0000000..3e65243
+Binary files /dev/null and b/tokenizing version 2/x64/Debug/tokenizing_v2.obj differ
+diff --git a/tokenizing version 2/x64/Debug/vc143.idb b/tokenizing version 2/x64/Debug/vc143.idb
+new file mode 100644
+index 0000000..c9ee59d
+Binary files /dev/null and b/tokenizing version 2/x64/Debug/vc143.idb differ
+diff --git a/tokenizing version 2/x64/Debug/vc143.pdb b/tokenizing version 2/x64/Debug/vc143.pdb
+new file mode 100644
+index 0000000..666e362
+Binary files /dev/null and b/tokenizing version 2/x64/Debug/vc143.pdb differ
+diff --git a/tokenizing.exe b/tokenizing.exe
+deleted file mode 100644
+index 28ad48b..0000000
+Binary files a/tokenizing.exe and /dev/null differ
+diff --git a/tokenizing_git_log.txt b/tokenizing_git_log.txt
+new file mode 100644
+index 0000000..f4533ad
+--- /dev/null
++++ b/tokenizing_git_log.txt
+@@ -0,0 +1,33 @@
++nguye@LAPTOP-1IUI7EAN MINGW64 ~/Documents/CPR101/Final Project/Final Project (master)
++$ git status
++On branch master
++Your branch is up to date with 'Final_Project/master'.
++
++Changes not staged for commit:
++  (use "git add <file>..." to update what will be committed)
++  (use "git restore <file>..." to discard changes in working directory)
++        modified:   tokenizing_v2.c
++        modified:   tokenizing_v2.h
++
++Untracked files:
++  (use "git add <file>..." to include in what will be committed)
++        tokenizing version 2/
++        tokenizing_both_functions_separated.c
++        tokenizing_v2_combine 2 versions.c
++
++no changes added to commit (use "git add" and/or "git commit -a")
++
++nguye@LAPTOP-1IUI7EAN MINGW64 ~/Documents/CPR101/Final Project/Final Project (master)
++$ git log
++commit f64bf9d2510a54c5781d9a205fa8c25ab52b2c28 (HEAD -> master, Final_Project/master)
++Author: Thy <nguyen.thy2986@gmail.com>
++Date:   Thu Aug 11 13:09:39 2022 -0400
++
++    version_2
++
++commit 29ad9a407ae67e3d662c30eac36ab48ab355a36e
++Author: Thy <nguyen.thy2986@gmail.com>
++Date:   Wed Aug 3 11:22:05 2022 -0400
++
++    �version_1�
++
+diff --git a/tokenizing_testing.txt b/tokenizing_testing.txt
+new file mode 100644
+index 0000000..9ae3742
+--- /dev/null
++++ b/tokenizing_testing.txt
+@@ -0,0 +1,51 @@
++Microsoft Windows [Version 10.0.19044.1889]
++(c) Microsoft Corporation. All rights reserved.
++C:\Users\nguye\Documents\CPR101\Final Project\Final Project>token
++*** Start of Tokenizing Phrases Demo ***
++Type a few Phrases separated by comma (q - to quit):
++hi,this is a normal string with comma,between different phrases
++Phrase #1 is 'hi'
++Phrase #2 is 'this is a normal string with comma'
++Phrase #3 is 'between different phrases'
++Type a few Phrases separated by comma (q - to quit):
++
++Type a few Phrases separated by comma (q - to quit):
++123,345 554,323
++Phrase #1 is '123'
++Phrase #2 is '345 554'
++Phrase #3 is '323'
++Type a few Phrases separated by comma (q - to quit):
++This@string@, contains few,special@characters between different commas
++Phrase #1 is 'This@string@'
++Phrase #2 is ' contains few'
++Phrase #3 is 'special@characters between different commas'
++Type a few Phrases separated by comma (q - to quit):
++hi,,there are two commas,two times in this string
++Phrase #1 is 'hi'
++Phrase #2 is 'there are two commas'
++Phrase #3 is 'two times in this string'
++Type a few Phrases separated by comma (q - to quit):
++hi,,there are two commas,two times in this string,with multiple spaces          before this and      this
++Phrase #1 is 'hi'
++Phrase #2 is 'there are two commas'
++Phrase #3 is 'two times in this string'
++Phrase #4 is 'with multiple spaces          before this and      this'
++Type a few Phrases separated by comma (q - to quit):
++this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code
++Phrase #1 is 'this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string ex'
++Type a few Phrases separated by comma (q - to quit):
++Phrase #1 is 'eeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code'
++Type a few Phrases separated by comma (q - to quit):
++thiswillincreasethebuffersieforthiswords,thiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswords
++Phrase #1 is 'thiswillincreasethebuffersieforthiswords'
++Phrase #2 is 'thiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreaset'
++Type a few Phrases separated by comma (q - to quit):
++Phrase #1 is 'ebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswords'
++Type a few Phrases separated by comma (q - to quit):
++hi,,there are two commas,two times in this string,
++Phrase #1 is 'hi'
++Phrase #2 is 'there are two commas'
++Phrase #3 is 'two times in this string'
++Type a few Phrases separated by comma (q - to quit):
++q
++*** End of Tokenizing Phrases Demo ***
+\ No newline at end of file
+diff --git a/tokenizing_v2.c b/tokenizing_v2.c
+index 9984379..b5088bb 100644
+--- a/tokenizing_v2.c
++++ b/tokenizing_v2.c
+@@ -1,37 +1,67 @@
++/*
++-------------------------------------------------
++Full Name  : Ngoc Diem Thy Nguyen
++Student ID#: 105310221
++Email      : nnguyen90@myseneca.ca
++Section    : NEE
++-------------------------------------------------
++*/
++
++// TOKENIZING MODULE SOURCE VERSION 2
++
+ #define _CRT_SECURE_NO_WARNINGS // _CRT_SECURE_NO_WARNINGS means you don't want the compiler to suggest the secure versions of the library functions, e.g. scanf_s when you use scanf
+ #define BUFFER_SIZE 300
+-#include "tokenizing.h" // Include header file created as "tokenizing.h"
++#include "tokenizing_v2.h" // Include header file created as "tokenizing.h"
+ 
+-void tokenizing(void) {
+-	printf("*** Start of Tokenizing Words and Phrases Demo ***\n"); // print statement to tell the user about the Demo
+-	char* nextWord = NULL; // initialize nextWord with NULL
+-	int wordsCounter; // Declare wordsCounter Variable
+-	char phrases[BUFFER_SIZE]; // Declare phrases array
+-	char* nextPhrase = NULL; // initialize nextPhrase with NULL
+-	int phrasesCounter; // Declare phrasesCounter Variable
+-	do { // Start DO...WHILE Loop
+-		printf("\nType a few Phrases separated by comma with words separated by space (q - to quit):\n"); // print statement for asking user to type few phrases or q to quit
+-		fgets(phrases, BUFFER_SIZE, stdin); // gets input from user
+-		phrases[strlen(phrases) - 1] = '\0'; // put null at the end of user input
+-		if(strcmp(phrases, "q") != 0) { // check if phrases has q or not (To check whether user want to continue or terminate)
+-            char *p = strtok_r(phrases, ",", &nextPhrase); // used strtok_r() on phrases separated comma(i.e ",")
+-            phrasesCounter = 1; // Initialized phrasesCounter as 1
+-            wordsCounter = 1; // Initialized wordsCounter as 1
+-            while(p) { // start WHILE Loop to traverse nextPhrase separated by comma
+-                printf("Phrase #%d is \'%s\'\n", phrasesCounter++, p); // print different phrase in the sentence entered by user
+-                char *q = strtok_r(p, " ", &nextWord); // used strtok_r() on words separated by space(i.e " ")
+-                while(q) { // start WHILE Loop to traverse nextword separated by space
+-                    printf("\tword #%d is \'%s\'\n", wordsCounter++, q); // print different words in the phrase entered by user
+-                    q = strtok_r(NULL, " ",&nextWord); // check if there are any tokens left to retrieve
+-                }
+-                p = strtok_r(NULL, ",", &nextPhrase); // check if there are any tokens left to retrieve
+-            }
++void tokenizing(void) 
++{
++	printf("*** Start of Tokenizing Words Demo ***\n");
++	char* nextWord = NULL;
++	char words[BUFFER_SIZE];
++	int wordsCounter;
++	do 
++	{
++		printf("Type a few words separated by space (q - to quit):\n");
++		fgets(words, BUFFER_SIZE, stdin);
++		words[strlen(words) - 1] = '\0';
++		if (strcmp(words, "q") != 0) 
++		{
++			nextWord = strtok(words, " ");
++			wordsCounter = 1;
++			while (nextWord) 
++			{
++				printf("Word #%d is \'%s\'\n", wordsCounter++, nextWord);
++				nextWord = strtok(NULL, " ");
++			}
+ 		}
+-	} while(strcmp(phrases, "q") != 0); // DO...WHILE Loop end condition
+-	printf("*** End of Tokenizing Words and Phrases Demo ***\n\n"); // print statement for telling user the end of Demo
++	} while (strcmp(words, "q") != 0);
++	printf("*** End of Tokenizing Words Demo ***\n\n");
++
++	printf("*** Start of Tokenizing Phrases Demo ***\n");
++	char phrases[BUFFER_SIZE];
++	char* nextPhrase = NULL;
++	int phrasesCounter;
++	do 
++	{
++		printf("Type a few Phrases separated by comma (q - to quit):\n");
++		fgets(phrases, BUFFER_SIZE, stdin);
++		phrases[strlen(phrases) - 1] = '\0';
++		if (strcmp(phrases, "q") != 0) 
++		{
++			nextPhrase = strtok(phrases, ",");
++			phrasesCounter = 1;
++			while (nextPhrase)
++			{
++				printf("Phrase #%d is \'%s\'\n", phrasesCounter++, nextPhrase);
++				nextPhrase = strtok(NULL, ",");
++			}
++		}
++	} while (strcmp(phrases, "q") != 0);
++	printf("*** End of Tokenizing Phrases Demo ***\n\n");
+ }
+ 
+-//Uncomment below main() function to run the code and check for different inputs
+-int main() {
+-    tokenizing();
++
++int main() 
++{
++	tokenizing();
+ }
+diff --git a/tokenizing_v2.h b/tokenizing_v2.h
+index 231d73c..535b7f1 100644
+--- a/tokenizing_v2.h
++++ b/tokenizing_v2.h
+@@ -1,6 +1,15 @@
+-#ifndef _TOKENIZING_H_ // This prevent from the multiple inclusion of same header file multiple time.
+-#define _TOKENIZING_H_
+-#include <stdio.h> // The stdio.h header defines three variable types, several macros, and various functions for performing input and output
+-#include <string.h> // The string.h header defines one variable type, one macro, and various functions for manipulating arrays of characters
+-void tokenizing(void); // Function Declaration
++/*
++-------------------------------------------------
++Full Name  : Ngoc Diem Thy Nguyen
++Student ID#: 105310221
++Email      : nnguyen90@myseneca.ca
++Section    : NEE
++-------------------------------------------------
++*/
++
++#ifndef _TOKENIZING_V2_H_ // This prevent from the multiple inclusion of same header file multiple time.
++#define _TOKENIZING_V2_H_ 
++#include <stdio.h> 
++#include <string.h> 
++void tokenizing(void);
+ #endif
+diff --git a/tokenizing_v2.h.gch b/tokenizing_v2.h.gch
+new file mode 100644
+index 0000000..78962c2
+Binary files /dev/null and b/tokenizing_v2.h.gch differ
+
+commit f64bf9d2510a54c5781d9a205fa8c25ab52b2c28
+Author: Thy <nguyen.thy2986@gmail.com>
+Date:   Thu Aug 11 13:09:39 2022 -0400
+
+    version_2
+
+diff --git a/.vs/Final Project/v17/.suo b/.vs/Final Project/v17/.suo
+index 851e0bd..35cfa7e 100644
+Binary files a/.vs/Final Project/v17/.suo and b/.vs/Final Project/v17/.suo differ
+diff --git a/.vs/Final Project/v17/Browse.VC.db b/.vs/Final Project/v17/Browse.VC.db
+index 9da0386..7f634bd 100644
+Binary files a/.vs/Final Project/v17/Browse.VC.db and b/.vs/Final Project/v17/Browse.VC.db differ
+diff --git a/.vs/Final Project/v17/Browse.VC.db-shm b/.vs/Final Project/v17/Browse.VC.db-shm
+new file mode 100644
+index 0000000..4e3571e
+Binary files /dev/null and b/.vs/Final Project/v17/Browse.VC.db-shm differ
+diff --git a/.vs/Final Project/v17/Browse.VC.db-wal b/.vs/Final Project/v17/Browse.VC.db-wal
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.vs/Final Project/v17/ipch/AutoPCH/20cb963f21a067de/TOKENIZING.ipch b/.vs/Final Project/v17/ipch/AutoPCH/20cb963f21a067de/TOKENIZING.ipch
+new file mode 100644
+index 0000000..307096b
+Binary files /dev/null and b/.vs/Final Project/v17/ipch/AutoPCH/20cb963f21a067de/TOKENIZING.ipch differ
+diff --git a/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch b/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch
+index 0b8f9e9..a304b6c 100644
+Binary files a/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch and b/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch differ
+diff --git a/.vs/Final Project/v17/ipch/AutoPCH/dd356255fe0c59ed/MAIN.ipch b/.vs/Final Project/v17/ipch/AutoPCH/dd356255fe0c59ed/MAIN.ipch
+new file mode 100644
+index 0000000..9d0891a
+Binary files /dev/null and b/.vs/Final Project/v17/ipch/AutoPCH/dd356255fe0c59ed/MAIN.ipch differ
+diff --git a/Final Project.vcxproj b/Final Project.vcxproj
+index 0112e62..185ce6d 100644
+--- a/Final Project.vcxproj	
++++ b/Final Project.vcxproj	
+@@ -19,6 +19,7 @@
+     </ProjectConfiguration>
+   </ItemGroup>
+   <ItemGroup>
++    <ClCompile Include="main.c" />
+     <ClCompile Include="tokenizing.c" />
+   </ItemGroup>
+   <ItemGroup>
+diff --git a/Final Project.vcxproj.filters b/Final Project.vcxproj.filters
+index f7bde54..43caeb2 100644
+--- a/Final Project.vcxproj.filters	
++++ b/Final Project.vcxproj.filters	
+@@ -14,6 +14,9 @@
+     <ClCompile Include="tokenizing.c">
+       <Filter>Resource Files</Filter>
+     </ClCompile>
++    <ClCompile Include="main.c">
++      <Filter>Resource Files</Filter>
++    </ClCompile>
+   </ItemGroup>
+   <ItemGroup>
+     <ClInclude Include="tokenizing.h">
+diff --git a/main.c b/main.c
+new file mode 100644
+index 0000000..d916a78
+--- /dev/null
++++ b/main.c
+@@ -0,0 +1,20 @@
++/*
++-------------------------------------------------
++Full Name  : Ngoc Diem Thy Nguyen
++Student ID#: 105310221
++Email      : nnguyen90@myseneca.ca
++Section    : NEE
++-------------------------------------------------
++*/
++
++#define _CRT_SECURE_NO_WARNINGS
++// System function
++#include <stdio.h>
++// Header file
++#include "tokenizing.h"
++
++int main()           // Main function to run the code
++{
++	tokenizing();
++	return 0;
++}
+\ No newline at end of file
+diff --git a/main.exe b/main.exe
+new file mode 100644
+index 0000000..b8296fa
+Binary files /dev/null and b/main.exe differ
+diff --git a/tokenizing-testing-V1.txt b/tokenizing-testing-V1.txt
+new file mode 100644
+index 0000000..027c070
+--- /dev/null
++++ b/tokenizing-testing-V1.txt
+@@ -0,0 +1,110 @@
++C:\Users\nguye\Documents\CPR101\FinalProject\FinalProject>main
++*** Start of Tokenizing Words Demo ***
++Type a few words reparated by space (q - to quit):
++This is normal string
++Word #1 is 'This'
++Word #2 is 'is'
++Word #3 is 'normal'
++Word #4 is 'string'
++Type a few words reparated by space (q - to quit):
++
++Type a few words reparated by space (q - to quit):
++123 456 789
++Word #1 is '123'
++Word #2 is '456'
++Word #3 is '789'
++Type a few words reparated by space (q - to quit):
++This@string@ contains special@characters
++Word #1 is 'This@string@'
++Word #2 is 'contains'
++Word #3 is 'special@characters'
++Type a few words reparated by space (q - to quit):
++This           is a      normal              string
++Word #1 is 'This'
++Word #2 is 'is'
++Word #3 is 'a'
++Word #4 is 'normal'
++Word #5 is 'string'
++Type a few words reparated by space (q - to quit):
++This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string
++Word #1 is 'This'
++Word #2 is 'is'
++Word #3 is 'normal'
++Word #4 is 'string'
++Word #5 is 'This'
++Word #6 is 'is'
++Word #7 is 'normal'
++Word #8 is 'string'
++Word #9 is 'This'
++Word #10 is 'is'
++Word #11 is 'normal'
++Word #12 is 'string'
++Word #13 is 'This'
++Word #14 is 'is'
++Word #15 is 'normal'
++Word #16 is 'string'
++Word #17 is 'This'
++Word #18 is 'is'
++Word #19 is 'normal'
++Word #20 is 'string'
++Word #21 is 'This'
++Word #22 is 'is'
++Word #23 is 'normal'
++Word #24 is 'string'
++Word #25 is 'This'
++Word #26 is 'is'
++Word #27 is 'normal'
++Word #28 is 'string'
++Word #29 is 'This'
++Word #30 is 'is'
++Word #31 is 'normal'
++Word #32 is 'string'
++Word #33 is 'This'
++Word #34 is 'is'
++Word #35 is 'normal'
++Word #36 is 'string'
++Word #37 is 'This'
++Word #38 is 'is'
++Word #39 is 'normal'
++Word #40 is 'string'
++Word #41 is 'This'
++Word #42 is 'is'
++Word #43 is 'normal'
++Word #44 is 'string'
++Word #45 is 'This'
++Word #46 is 'is'
++Word #47 is 'normal'
++Word #48 is 'string'
++Word #49 is 'This'
++Word #50 is 'is'
++Word #51 is 'normal'
++Word #52 is 'string'
++Word #53 is 'This'
++Word #54 is 'is'
++Word #55 is 'norm'
++Type a few words reparated by space (q - to quit):
++Word #1 is 'l'
++Word #2 is 'string'
++Word #3 is 'This'
++Word #4 is 'is'
++Word #5 is 'normal'
++Word #6 is 'string'
++Word #7 is 'This'
++Word #8 is 'is'
++Word #9 is 'normal'
++Word #10 is 'string'
++Word #11 is 'This'
++Word #12 is 'is'
++Word #13 is 'normal'
++Word #14 is 'string'
++Word #15 is 'This'
++Word #16 is 'is'
++Word #17 is 'normal'
++Word #18 is 'string'
++Word #19 is 'This'
++Word #20 is 'is'
++Word #21 is 'normal'
++Word #22 is 'string'
++Type a few words reparated by space (q - to quit):
++q
++*** End of Tokenizing Words Demo ***
+\ No newline at end of file
+diff --git a/tokenizing.c b/tokenizing.c
+index 075a81b..2f1f4bc 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -1,3 +1,12 @@
++/*
++-------------------------------------------------
++Full Name  : Ngoc Diem Thy Nguyen
++Student ID#: 105310221
++Email      : nnguyen90@myseneca.ca
++Section    : NEE
++-------------------------------------------------
++*/
++
+ // TOKENIZING MODULE SOURCE
+ #define _CRT_SECURE_NO_WARNINGS
+ #define BUFFER_SIZE 300           
+@@ -28,7 +37,3 @@ void tokenizing(void)
+ 	}while (strcmp(words, "q") != 0);           
+ 	printf ("*** End of Tokenizing Words Demo ***\n\n");					
+ }
+-int main()           // Main function to run the code
+-{
+-	tokenizing();    
+-}
+\ No newline at end of file
+diff --git a/tokenizing.exe b/tokenizing.exe
+new file mode 100644
+index 0000000..28ad48b
+Binary files /dev/null and b/tokenizing.exe differ
+diff --git a/tokenizing.h b/tokenizing.h
+index 535efd9..b932a52 100644
+--- a/tokenizing.h
++++ b/tokenizing.h
+@@ -1,3 +1,12 @@
++/*
++-------------------------------------------------
++Full Name  : Ngoc Diem Thy Nguyen
++Student ID#: 105310221
++Email      : nnguyen90@myseneca.ca
++Section    : NEE
++-------------------------------------------------
++*/
++
+ #ifndef _TOKENIZING_H_  // Prevent multiple inclusion of same header file
+ #define _TOKENIZING_H_  
+ #include <stdio.h>
+diff --git a/tokenizing.h.gch b/tokenizing.h.gch
+new file mode 100644
+index 0000000..cf96b0e
+Binary files /dev/null and b/tokenizing.h.gch differ
+diff --git a/tokenizing_v2.c b/tokenizing_v2.c
+new file mode 100644
+index 0000000..9984379
+--- /dev/null
++++ b/tokenizing_v2.c
+@@ -0,0 +1,37 @@
++#define _CRT_SECURE_NO_WARNINGS // _CRT_SECURE_NO_WARNINGS means you don't want the compiler to suggest the secure versions of the library functions, e.g. scanf_s when you use scanf
++#define BUFFER_SIZE 300
++#include "tokenizing.h" // Include header file created as "tokenizing.h"
++
++void tokenizing(void) {
++	printf("*** Start of Tokenizing Words and Phrases Demo ***\n"); // print statement to tell the user about the Demo
++	char* nextWord = NULL; // initialize nextWord with NULL
++	int wordsCounter; // Declare wordsCounter Variable
++	char phrases[BUFFER_SIZE]; // Declare phrases array
++	char* nextPhrase = NULL; // initialize nextPhrase with NULL
++	int phrasesCounter; // Declare phrasesCounter Variable
++	do { // Start DO...WHILE Loop
++		printf("\nType a few Phrases separated by comma with words separated by space (q - to quit):\n"); // print statement for asking user to type few phrases or q to quit
++		fgets(phrases, BUFFER_SIZE, stdin); // gets input from user
++		phrases[strlen(phrases) - 1] = '\0'; // put null at the end of user input
++		if(strcmp(phrases, "q") != 0) { // check if phrases has q or not (To check whether user want to continue or terminate)
++            char *p = strtok_r(phrases, ",", &nextPhrase); // used strtok_r() on phrases separated comma(i.e ",")
++            phrasesCounter = 1; // Initialized phrasesCounter as 1
++            wordsCounter = 1; // Initialized wordsCounter as 1
++            while(p) { // start WHILE Loop to traverse nextPhrase separated by comma
++                printf("Phrase #%d is \'%s\'\n", phrasesCounter++, p); // print different phrase in the sentence entered by user
++                char *q = strtok_r(p, " ", &nextWord); // used strtok_r() on words separated by space(i.e " ")
++                while(q) { // start WHILE Loop to traverse nextword separated by space
++                    printf("\tword #%d is \'%s\'\n", wordsCounter++, q); // print different words in the phrase entered by user
++                    q = strtok_r(NULL, " ",&nextWord); // check if there are any tokens left to retrieve
++                }
++                p = strtok_r(NULL, ",", &nextPhrase); // check if there are any tokens left to retrieve
++            }
++		}
++	} while(strcmp(phrases, "q") != 0); // DO...WHILE Loop end condition
++	printf("*** End of Tokenizing Words and Phrases Demo ***\n\n"); // print statement for telling user the end of Demo
++}
++
++//Uncomment below main() function to run the code and check for different inputs
++int main() {
++    tokenizing();
++}
+diff --git a/tokenizing_v2.h b/tokenizing_v2.h
+new file mode 100644
+index 0000000..231d73c
+--- /dev/null
++++ b/tokenizing_v2.h
+@@ -0,0 +1,6 @@
++#ifndef _TOKENIZING_H_ // This prevent from the multiple inclusion of same header file multiple time.
++#define _TOKENIZING_H_
++#include <stdio.h> // The stdio.h header defines three variable types, several macros, and various functions for performing input and output
++#include <string.h> // The string.h header defines one variable type, one macro, and various functions for manipulating arrays of characters
++void tokenizing(void); // Function Declaration
++#endif
+diff --git a/tokenzing-testing-V2.txt b/tokenzing-testing-V2.txt
+new file mode 100644
+index 0000000..28d1733
+--- /dev/null
++++ b/tokenzing-testing-V2.txt
+@@ -0,0 +1,234 @@
++The input and output for all the test cases for version 1 mentioned in excel
++
++1) Test case 1
++ 
++INPUT:
++hi,this is a normal string with comma,between different phrases
++
++OUTPUT:
++Phrase #1 is 'hi'
++        word #1 is 'hi'
++Phrase #2 is 'this is a normal string with comma'
++        word #2 is 'this'
++        word #3 is 'is'
++        word #4 is 'a'
++        word #5 is 'normal'
++        word #6 is 'string'
++        word #7 is 'with'
++        word #8 is 'comma'
++Phrase #3 is 'between different phrases'
++        word #9 is 'between'
++        word #10 is 'different'
++        word #11 is 'phrases'
++
++2) Test case 2
++
++INPUT:
++""
++
++OUTPUT:
++""
++
++3) Test case 3
++
++INPUT:
++123,345 554,323
++
++OUTPUT:
++Phrase #1 is '123'
++        word #1 is '123'
++Phrase #2 is '345 554'
++        word #2 is '345'
++        word #3 is '554'
++Phrase #3 is '323'
++        word #4 is '323'
++
++4) Test case 4
++
++INPUT:
++This@string@, contains few,special@characters between different commas
++
++OUTPUT:
++Phrase #1 is 'This@string@'
++        word #1 is 'This@string@'
++Phrase #2 is ' contains few'
++        word #2 is 'contains'
++        word #3 is 'few'
++Phrase #3 is 'special@characters between different commas'
++        word #4 is 'special@characters'
++        word #5 is 'between'
++        word #6 is 'different'
++        word #7 is 'commas'
++
++5) Test case 5
++
++INPUT:
++hi,,there are two commas,two times in this string
++
++OUTPUT:
++Phrase #1 is 'hi'
++        word #1 is 'hi'
++Phrase #2 is 'there are two commas'
++        word #2 is 'there'
++        word #3 is 'are'
++        word #4 is 'two'
++        word #5 is 'commas'
++Phrase #3 is 'two times in this string'
++        word #6 is 'two'
++        word #7 is 'times'
++        word #8 is 'in'
++        word #9 is 'this'
++        word #10 is 'string'
++
++6) Test case 6
++
++INPUT:
++hi,,there are two commas,two times in this string,with multiple spaces          before this and      this
++
++OUTPUT:
++Phrase #1 is 'hi'
++        word #1 is 'hi'
++Phrase #2 is 'there are two commas'
++        word #2 is 'there'
++        word #3 is 'are'
++        word #4 is 'two'
++        word #5 is 'commas'
++Phrase #3 is 'two times in this string'
++        word #6 is 'two'
++        word #7 is 'times'
++        word #8 is 'in'
++        word #9 is 'this'
++        word #10 is 'string'
++Phrase #4 is 'with multiple spaces          before this and      this'
++        word #11 is 'with'
++        word #12 is 'multiple'
++        word #13 is 'spaces'
++        word #14 is 'before'
++        word #15 is 'this'
++        word #16 is 'and'
++        word #17 is 'this'
++
++7) Test case 7
++
++INPUT:
++q
++
++OUTPUT:
++*** End of Tokenizing Words Demo *** (Function Terminated)
++
++8) Test case 8
++
++INPUT:
++this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code
++
++OUTPUT: (Notice the wrong results after word 51 in phrase 1 where the buffer size exceeds the buffer size in code)
++Phrase #1 is 'this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code this will overflow the buffer because this string ex'
++        word #1 is 'this'
++        word #2 is 'will'
++        word #3 is 'overflow'
++        word #4 is 'the'
++        word #5 is 'buffer'
++        word #6 is 'because'
++        word #7 is 'this'
++        word #8 is 'string'
++        word #9 is 'exceeds'
++        word #10 is 'the'
++        word #11 is 'buffer'
++        word #12 is 'size'
++        word #13 is 'in'
++        word #14 is 'code'
++        word #15 is 'this'
++        word #16 is 'will'
++        word #17 is 'overflow'
++        word #18 is 'the'
++        word #19 is 'buffer'
++        word #20 is 'because'
++        word #21 is 'this'
++        word #22 is 'string'
++        word #23 is 'exceeds'
++        word #24 is 'the'
++        word #25 is 'buffer'
++        word #26 is 'size'
++        word #27 is 'in'
++        word #28 is 'code'
++        word #29 is 'this'
++        word #30 is 'will'
++        word #31 is 'overflow'
++        word #32 is 'the'
++        word #33 is 'buffer'
++        word #34 is 'because'
++        word #35 is 'this'
++        word #36 is 'string'
++        word #37 is 'exceeds'
++        word #38 is 'the'
++        word #39 is 'buffer'
++        word #40 is 'size'
++        word #41 is 'in'
++        word #42 is 'code'
++        word #43 is 'this'
++        word #44 is 'will'
++        word #45 is 'overflow'
++        word #46 is 'the'
++        word #47 is 'buffer'
++        word #48 is 'because'
++        word #49 is 'this'
++        word #50 is 'string'
++        word #51 is 'ex'
++
++Type a few Phrases separated by comma with words separated by space (q - to quit):
++Phrase #1 is 'eeds the buffer size in code this will overflow the buffer because this string exceeds the buffer size in code'
++        word #1 is 'eeds'
++        word #2 is 'the'
++        word #3 is 'buffer'
++        word #4 is 'size'
++        word #5 is 'in'
++        word #6 is 'code'
++        word #7 is 'this'
++        word #8 is 'will'
++        word #9 is 'overflow'
++        word #10 is 'the'
++        word #11 is 'buffer'
++        word #12 is 'because'
++        word #13 is 'this'
++        word #14 is 'string'
++        word #15 is 'exceeds'
++        word #16 is 'the'
++        word #17 is 'buffer'
++        word #18 is 'size'
++        word #19 is 'in'
++        word #20 is 'code'
++
++9) Test Case 9
++
++INPUT:
++thiswillincreasethebuffersieforthiswords,thiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswords
++
++OUTPUT: (Notice the wrong results after phrase 2 where the buffer size for a word exceeds the buffer size in code)
++Phrase #1 is 'thiswillincreasethebuffersieforthiswords'
++        word #1 is 'thiswillincreasethebuffersieforthiswords'
++Phrase #2 is 'thiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreaset'
++        word #2 is 'thiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreaset'
++
++Type a few Phrases separated by comma with words separated by space (q - to quit):
++Phrase #1 is 'ebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswords'
++        word #1 is 'ebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswordsthiswillincreasethebuffersieforthiswords'
++
++10) Test Case 10
++
++INPUT:
++hi,,there are two commas,two times in this string,
++
++OUTPUT:
++Phrase #1 is 'hi'
++        word #1 is 'hi'
++Phrase #2 is 'there are two commas'
++        word #2 is 'there'
++        word #3 is 'are'
++        word #4 is 'two'
++        word #5 is 'commas'
++Phrase #3 is 'two times in this string'
++        word #6 is 'two'
++        word #7 is 'times'
++        word #8 is 'in'
++        word #9 is 'this'
++        word #10 is 'string'
+\ No newline at end of file
+diff --git a/x64/Debug/Final Project.exe b/x64/Debug/Final Project.exe
+index 39649be..4e4500f 100644
+Binary files a/x64/Debug/Final Project.exe and b/x64/Debug/Final Project.exe differ
+diff --git a/x64/Debug/Final Project.exe.recipe b/x64/Debug/Final Project.exe.recipe
+index 7735a33..b8aabfc 100644
+--- a/x64/Debug/Final Project.exe.recipe	
++++ b/x64/Debug/Final Project.exe.recipe	
+@@ -2,7 +2,7 @@
+ <Project>
+   <ProjectOutputs>
+     <ProjectOutput>
+-      <FullPath>C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe</FullPath>
++      <FullPath>C:\Users\nguye\Documents\CPR101\FinalProject\FinalProject\x64\Debug\Final Project.exe</FullPath>
+     </ProjectOutput>
+   </ProjectOutputs>
+   <ContentFiles />
+diff --git a/x64/Debug/Final Project.ilk b/x64/Debug/Final Project.ilk
+index 0a5257b..2a3aab1 100644
+Binary files a/x64/Debug/Final Project.ilk and b/x64/Debug/Final Project.ilk differ
+diff --git a/x64/Debug/Final Project.log b/x64/Debug/Final Project.log
+index 8f87944..9845219 100644
+--- a/x64/Debug/Final Project.log	
++++ b/x64/Debug/Final Project.log	
+@@ -1,3 +1,2 @@
+-﻿  tokenizing.c
+-  LINK : C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe not found or not built by the last incremental link; performing full link
+-  Final Project.vcxproj -> C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe
++﻿  main.c
++  Final Project.vcxproj -> C:\Users\nguye\Documents\CPR101\FinalProject\FinalProject\x64\Debug\Final Project.exe
+diff --git a/x64/Debug/Final Project.pdb b/x64/Debug/Final Project.pdb
+index ef7655a..135aeaa 100644
+Binary files a/x64/Debug/Final Project.pdb and b/x64/Debug/Final Project.pdb differ
+diff --git a/x64/Debug/Final Project.tlog/CL.command.1.tlog b/x64/Debug/Final Project.tlog/CL.command.1.tlog
+index 9d48dc7..ee07b30 100644
+Binary files a/x64/Debug/Final Project.tlog/CL.command.1.tlog and b/x64/Debug/Final Project.tlog/CL.command.1.tlog differ
+diff --git a/x64/Debug/Final Project.tlog/CL.read.1.tlog b/x64/Debug/Final Project.tlog/CL.read.1.tlog
+index 418abb3..158653c 100644
+Binary files a/x64/Debug/Final Project.tlog/CL.read.1.tlog and b/x64/Debug/Final Project.tlog/CL.read.1.tlog differ
+diff --git a/x64/Debug/Final Project.tlog/CL.write.1.tlog b/x64/Debug/Final Project.tlog/CL.write.1.tlog
+index 133932f..cb24c31 100644
+Binary files a/x64/Debug/Final Project.tlog/CL.write.1.tlog and b/x64/Debug/Final Project.tlog/CL.write.1.tlog differ
+diff --git a/x64/Debug/Final Project.tlog/Final Project.lastbuildstate b/x64/Debug/Final Project.tlog/Final Project.lastbuildstate
+index 8b38596..4ea1590 100644
+--- a/x64/Debug/Final Project.tlog/Final Project.lastbuildstate	
++++ b/x64/Debug/Final Project.tlog/Final Project.lastbuildstate	
+@@ -1,2 +1,2 @@
+ PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.31.31103:TargetPlatformVersion=10.0.19041.0:
+-Debug|x64|C:\Users\nguye\Documents\CPR101\Final Project\Final Project\|
++Debug|x64|C:\Users\nguye\Documents\CPR101\FinalProject\FinalProject\|
+diff --git a/x64/Debug/Final Project.tlog/link.command.1.tlog b/x64/Debug/Final Project.tlog/link.command.1.tlog
+index 5ac90bb..8856d3d 100644
+Binary files a/x64/Debug/Final Project.tlog/link.command.1.tlog and b/x64/Debug/Final Project.tlog/link.command.1.tlog differ
+diff --git a/x64/Debug/Final Project.tlog/link.read.1.tlog b/x64/Debug/Final Project.tlog/link.read.1.tlog
+index 7ea0b88..a4de3d0 100644
+Binary files a/x64/Debug/Final Project.tlog/link.read.1.tlog and b/x64/Debug/Final Project.tlog/link.read.1.tlog differ
+diff --git a/x64/Debug/Final Project.tlog/link.write.1.tlog b/x64/Debug/Final Project.tlog/link.write.1.tlog
+index f2e49e0..fefd422 100644
+Binary files a/x64/Debug/Final Project.tlog/link.write.1.tlog and b/x64/Debug/Final Project.tlog/link.write.1.tlog differ
+diff --git a/x64/Debug/Final Project.vcxproj.FileListAbsolute.txt b/x64/Debug/Final Project.vcxproj.FileListAbsolute.txt
+index f411f54..2ff072c 100644
+--- a/x64/Debug/Final Project.vcxproj.FileListAbsolute.txt	
++++ b/x64/Debug/Final Project.vcxproj.FileListAbsolute.txt	
+@@ -1 +1,2 @@
+ C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe
++C:\Users\nguye\Documents\CPR101\FinalProject\FinalProject\x64\Debug\Final Project.exe
+diff --git a/x64/Debug/main.obj b/x64/Debug/main.obj
+new file mode 100644
+index 0000000..318fc56
+Binary files /dev/null and b/x64/Debug/main.obj differ
+diff --git a/x64/Debug/tokenizing.obj b/x64/Debug/tokenizing.obj
+index 683dee0..4c679bd 100644
+Binary files a/x64/Debug/tokenizing.obj and b/x64/Debug/tokenizing.obj differ
+diff --git a/x64/Debug/vc143.idb b/x64/Debug/vc143.idb
+index 896fcb0..41e1e62 100644
+Binary files a/x64/Debug/vc143.idb and b/x64/Debug/vc143.idb differ
+diff --git a/x64/Debug/vc143.pdb b/x64/Debug/vc143.pdb
+index 3649fa2..ba87ffe 100644
+Binary files a/x64/Debug/vc143.pdb and b/x64/Debug/vc143.pdb differ
+
+commit 29ad9a407ae67e3d662c30eac36ab48ab355a36e
+Author: Thy <nguyen.thy2986@gmail.com>
+Date:   Wed Aug 3 11:22:05 2022 -0400
+
+    “version_1”
+
+diff --git a/.vs/Final Project/v17/.suo b/.vs/Final Project/v17/.suo
+new file mode 100644
+index 0000000..851e0bd
+Binary files /dev/null and b/.vs/Final Project/v17/.suo differ
+diff --git a/.vs/Final Project/v17/Browse.VC.db b/.vs/Final Project/v17/Browse.VC.db
+new file mode 100644
+index 0000000..9da0386
+Binary files /dev/null and b/.vs/Final Project/v17/Browse.VC.db differ
+diff --git a/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch b/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch
+new file mode 100644
+index 0000000..0b8f9e9
+Binary files /dev/null and b/.vs/Final Project/v17/ipch/AutoPCH/49081504a0ddeb32/TOKENIZING.ipch differ
+diff --git a/Final Project.vcxproj b/Final Project.vcxproj
+new file mode 100644
+index 0000000..0112e62
+--- /dev/null
++++ b/Final Project.vcxproj	
+@@ -0,0 +1,150 @@
++<?xml version="1.0" encoding="utf-8"?>
++<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++  <ItemGroup Label="ProjectConfigurations">
++    <ProjectConfiguration Include="Debug|Win32">
++      <Configuration>Debug</Configuration>
++      <Platform>Win32</Platform>
++    </ProjectConfiguration>
++    <ProjectConfiguration Include="Release|Win32">
++      <Configuration>Release</Configuration>
++      <Platform>Win32</Platform>
++    </ProjectConfiguration>
++    <ProjectConfiguration Include="Debug|x64">
++      <Configuration>Debug</Configuration>
++      <Platform>x64</Platform>
++    </ProjectConfiguration>
++    <ProjectConfiguration Include="Release|x64">
++      <Configuration>Release</Configuration>
++      <Platform>x64</Platform>
++    </ProjectConfiguration>
++  </ItemGroup>
++  <ItemGroup>
++    <ClCompile Include="tokenizing.c" />
++  </ItemGroup>
++  <ItemGroup>
++    <ClInclude Include="tokenizing.h" />
++  </ItemGroup>
++  <PropertyGroup Label="Globals">
++    <VCProjectVersion>16.0</VCProjectVersion>
++    <Keyword>Win32Proj</Keyword>
++    <ProjectGuid>{df863cd6-2967-4bc1-8241-09f8eb15acaf}</ProjectGuid>
++    <RootNamespace>FinalProject</RootNamespace>
++    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
++  </PropertyGroup>
++  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
++    <ConfigurationType>Application</ConfigurationType>
++    <UseDebugLibraries>true</UseDebugLibraries>
++    <PlatformToolset>v143</PlatformToolset>
++    <CharacterSet>Unicode</CharacterSet>
++  </PropertyGroup>
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
++    <ConfigurationType>Application</ConfigurationType>
++    <UseDebugLibraries>false</UseDebugLibraries>
++    <PlatformToolset>v143</PlatformToolset>
++    <WholeProgramOptimization>true</WholeProgramOptimization>
++    <CharacterSet>Unicode</CharacterSet>
++  </PropertyGroup>
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
++    <ConfigurationType>Application</ConfigurationType>
++    <UseDebugLibraries>true</UseDebugLibraries>
++    <PlatformToolset>v143</PlatformToolset>
++    <CharacterSet>Unicode</CharacterSet>
++  </PropertyGroup>
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
++    <ConfigurationType>Application</ConfigurationType>
++    <UseDebugLibraries>false</UseDebugLibraries>
++    <PlatformToolset>v143</PlatformToolset>
++    <WholeProgramOptimization>true</WholeProgramOptimization>
++    <CharacterSet>Unicode</CharacterSet>
++  </PropertyGroup>
++  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
++  <ImportGroup Label="ExtensionSettings">
++  </ImportGroup>
++  <ImportGroup Label="Shared">
++  </ImportGroup>
++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
++  </ImportGroup>
++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
++  </ImportGroup>
++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
++  </ImportGroup>
++  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
++    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
++  </ImportGroup>
++  <PropertyGroup Label="UserMacros" />
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
++    <LinkIncremental>true</LinkIncremental>
++  </PropertyGroup>
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
++    <LinkIncremental>false</LinkIncremental>
++  </PropertyGroup>
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
++    <LinkIncremental>true</LinkIncremental>
++  </PropertyGroup>
++  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
++    <LinkIncremental>false</LinkIncremental>
++  </PropertyGroup>
++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
++    <ClCompile>
++      <WarningLevel>Level3</WarningLevel>
++      <SDLCheck>true</SDLCheck>
++      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
++      <ConformanceMode>true</ConformanceMode>
++    </ClCompile>
++    <Link>
++      <SubSystem>Console</SubSystem>
++      <GenerateDebugInformation>true</GenerateDebugInformation>
++    </Link>
++  </ItemDefinitionGroup>
++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
++    <ClCompile>
++      <WarningLevel>Level3</WarningLevel>
++      <FunctionLevelLinking>true</FunctionLevelLinking>
++      <IntrinsicFunctions>true</IntrinsicFunctions>
++      <SDLCheck>true</SDLCheck>
++      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
++      <ConformanceMode>true</ConformanceMode>
++    </ClCompile>
++    <Link>
++      <SubSystem>Console</SubSystem>
++      <EnableCOMDATFolding>true</EnableCOMDATFolding>
++      <OptimizeReferences>true</OptimizeReferences>
++      <GenerateDebugInformation>true</GenerateDebugInformation>
++    </Link>
++  </ItemDefinitionGroup>
++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
++    <ClCompile>
++      <WarningLevel>Level3</WarningLevel>
++      <SDLCheck>true</SDLCheck>
++      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
++      <ConformanceMode>true</ConformanceMode>
++    </ClCompile>
++    <Link>
++      <SubSystem>Console</SubSystem>
++      <GenerateDebugInformation>true</GenerateDebugInformation>
++    </Link>
++  </ItemDefinitionGroup>
++  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
++    <ClCompile>
++      <WarningLevel>Level3</WarningLevel>
++      <FunctionLevelLinking>true</FunctionLevelLinking>
++      <IntrinsicFunctions>true</IntrinsicFunctions>
++      <SDLCheck>true</SDLCheck>
++      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
++      <ConformanceMode>true</ConformanceMode>
++    </ClCompile>
++    <Link>
++      <SubSystem>Console</SubSystem>
++      <EnableCOMDATFolding>true</EnableCOMDATFolding>
++      <OptimizeReferences>true</OptimizeReferences>
++      <GenerateDebugInformation>true</GenerateDebugInformation>
++    </Link>
++  </ItemDefinitionGroup>
++  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
++  <ImportGroup Label="ExtensionTargets">
++  </ImportGroup>
++</Project>
+\ No newline at end of file
+diff --git a/Final Project.vcxproj.filters b/Final Project.vcxproj.filters
+new file mode 100644
+index 0000000..f7bde54
+--- /dev/null
++++ b/Final Project.vcxproj.filters	
+@@ -0,0 +1,23 @@
++﻿<?xml version="1.0" encoding="utf-8"?>
++<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++  <ItemGroup>
++    <Filter Include="Header Files">
++      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
++      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
++    </Filter>
++    <Filter Include="Resource Files">
++      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
++      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
++    </Filter>
++  </ItemGroup>
++  <ItemGroup>
++    <ClCompile Include="tokenizing.c">
++      <Filter>Resource Files</Filter>
++    </ClCompile>
++  </ItemGroup>
++  <ItemGroup>
++    <ClInclude Include="tokenizing.h">
++      <Filter>Header Files</Filter>
++    </ClInclude>
++  </ItemGroup>
++</Project>
+\ No newline at end of file
+diff --git a/Final Project.vcxproj.user b/Final Project.vcxproj.user
+new file mode 100644
+index 0000000..88a5509
+--- /dev/null
++++ b/Final Project.vcxproj.user	
+@@ -0,0 +1,4 @@
++﻿<?xml version="1.0" encoding="utf-8"?>
++<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++  <PropertyGroup />
++</Project>
+\ No newline at end of file
+diff --git a/Source.cpp b/Source.cpp
+new file mode 100644
+index 0000000..e69de29
+diff --git a/tokenizing-testing.txt b/tokenizing-testing.txt
+new file mode 100644
+index 0000000..4a6579b
+--- /dev/null
++++ b/tokenizing-testing.txt
+@@ -0,0 +1,144 @@
++1) Test case 1
++ 
++INPUT:
++This is a normal string
++
++OUTPUT:
++Word #1 is 'This'
++Word #2 is 'is'
++Word #3 is 'a'
++Word #4 is 'normal'
++Word #5 is 'string'
++
++2) Test case 2
++
++INPUT:
++""
++
++OUTPUT:
++""
++
++3) Test case 3
++
++INPUT:
++123 456 789
++
++OUTPUT:
++Word #1 is '123'
++Word #2 is '456'
++Word #3 is '789'
++
++4) Test case 4
++
++INPUT:
++This@string@ contains special@characters
++
++OUTPUT:
++Word #1 is 'This@string@'
++Word #2 is 'contains'
++Word #3 is 'special@characters'
++
++5) Test case 5
++
++INPUT:
++This           is a      normal              string
++
++OUTPUT:
++Word #1 is 'This'
++Word #2 is 'is'
++Word #3 is 'a'
++Word #4 is 'normal'
++Word #5 is 'string'
++
++6) Test case 6
++
++INPUT:
++q
++
++OUTPUT:
++*** End of Tokenizing Words Demo *** (Function Terminated)
++
++7) Test case 7
++
++INPUT:
++This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string This is normal string
++
++OUTPUT: (See the wrong results below after word 55 where the buffer size exceeds the buffer size in code)
++Word #1 is 'This'
++Word #2 is 'is'
++Word #3 is 'normal'
++Word #4 is 'string'
++Word #5 is 'This'
++Word #6 is 'is'
++Word #7 is 'normal'
++Word #8 is 'string'
++Word #9 is 'This'
++Word #10 is 'is'
++Word #11 is 'normal'
++Word #12 is 'string'
++Word #13 is 'This'
++Word #14 is 'is'
++Word #15 is 'normal'
++Word #16 is 'string'
++Word #17 is 'This'
++Word #18 is 'is'
++Word #19 is 'normal'
++Word #20 is 'string'
++Word #21 is 'This'
++Word #22 is 'is'
++Word #23 is 'normal'
++Word #24 is 'string'
++Word #25 is 'This'
++Word #26 is 'is'
++Word #27 is 'normal'
++Word #28 is 'string'
++Word #29 is 'This'
++Word #30 is 'is'
++Word #31 is 'normal'
++Word #32 is 'string'
++Word #33 is 'This'
++Word #34 is 'is'
++Word #35 is 'normal'
++Word #36 is 'string'
++Word #37 is 'This'
++Word #38 is 'is'
++Word #39 is 'normal'
++Word #40 is 'string'
++Word #41 is 'This'
++Word #42 is 'is'
++Word #43 is 'normal'
++Word #44 is 'string'
++Word #45 is 'This'
++Word #46 is 'is'
++Word #47 is 'normal'
++Word #48 is 'string'
++Word #49 is 'This'
++Word #50 is 'is'
++Word #51 is 'normal'
++Word #52 is 'string'
++Word #53 is 'This'
++Word #54 is 'is'
++Word #55 is 'norm'
++Type a few words separated by space (q - to quit):
++Word #1 is 'l'
++Word #2 is 'string'
++Word #3 is 'This'
++Word #4 is 'is'
++Word #5 is 'normal'
++Word #6 is 'string'
++Word #7 is 'This'
++Word #8 is 'is'
++Word #9 is 'normal'
++Word #10 is 'string'
++Word #11 is 'This'
++Word #12 is 'is'
++Word #13 is 'normal'
++Word #14 is 'string'
++Word #15 is 'This'
++Word #16 is 'is'
++Word #17 is 'normal'
++Word #18 is 'string'
++Word #19 is 'This'
++Word #20 is 'is'
++Word #21 is 'normal'
++Word #22 is 'string'
+diff --git a/tokenizing.c b/tokenizing.c
+new file mode 100644
+index 0000000..075a81b
+--- /dev/null
++++ b/tokenizing.c
+@@ -0,0 +1,34 @@
++// TOKENIZING MODULE SOURCE
++#define _CRT_SECURE_NO_WARNINGS
++#define BUFFER_SIZE 300           
++#include "tokenizing.h"			  // To include the header file "tokenizing.h"
++
++// V1
++void tokenizing(void) 
++{
++	printf ("*** Start of Tokenizing Words Demo ***\n");
++	char words [BUFFER_SIZE]; 
++	char* nextWord = NULL;    // Initializing 'nextWord' variable with NULL
++	int wordsCounter;         
++	do                        
++	{
++		printf ("Type a few words reparated by space (q - to quit):\n");    
++		fgets (words, BUFFER_SIZE, stdin);								    
++		words [strlen(words) - 1] = '\0';	    // to put NULL at the end of users' input
++		if (strcmp(words, "q") != 0)			
++		{
++			nextWord = strtok(words, " ");		// Use 'strtok' function on words where delimiter is space(s)
++			wordsCounter = 1;					
++			while (nextWord)					
++			{
++				printf ("Word #%d is \'%s\'\n", wordsCounter++, nextWord);  // Print different words which are input by users
++				nextWord = strtok (NULL, " ");								// Check if any token left to retrieve
++			}
++		}
++	}while (strcmp(words, "q") != 0);           
++	printf ("*** End of Tokenizing Words Demo ***\n\n");					
++}
++int main()           // Main function to run the code
++{
++	tokenizing();    
++}
+\ No newline at end of file
+diff --git a/tokenizing.h b/tokenizing.h
+new file mode 100644
+index 0000000..535efd9
+--- /dev/null
++++ b/tokenizing.h
+@@ -0,0 +1,8 @@
++#ifndef _TOKENIZING_H_  // Prevent multiple inclusion of same header file
++#define _TOKENIZING_H_  
++#include <stdio.h>
++#include <string.h>		// To define functions for manipulating arrays of characters
++void tokenizing (void); 
++#endif
++
++
+diff --git a/x64/Debug/Final Project.exe b/x64/Debug/Final Project.exe
+new file mode 100644
+index 0000000..39649be
+Binary files /dev/null and b/x64/Debug/Final Project.exe differ
+diff --git a/x64/Debug/Final Project.exe.recipe b/x64/Debug/Final Project.exe.recipe
+new file mode 100644
+index 0000000..7735a33
+--- /dev/null
++++ b/x64/Debug/Final Project.exe.recipe	
+@@ -0,0 +1,11 @@
++﻿<?xml version="1.0" encoding="utf-8"?>
++<Project>
++  <ProjectOutputs>
++    <ProjectOutput>
++      <FullPath>C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe</FullPath>
++    </ProjectOutput>
++  </ProjectOutputs>
++  <ContentFiles />
++  <SatelliteDlls />
++  <NonRecipeFileRefs />
++</Project>
+\ No newline at end of file
+diff --git a/x64/Debug/Final Project.ilk b/x64/Debug/Final Project.ilk
+new file mode 100644
+index 0000000..0a5257b
+Binary files /dev/null and b/x64/Debug/Final Project.ilk differ
+diff --git a/x64/Debug/Final Project.log b/x64/Debug/Final Project.log
+new file mode 100644
+index 0000000..8f87944
+--- /dev/null
++++ b/x64/Debug/Final Project.log	
+@@ -0,0 +1,3 @@
++﻿  tokenizing.c
++  LINK : C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe not found or not built by the last incremental link; performing full link
++  Final Project.vcxproj -> C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe
+diff --git a/x64/Debug/Final Project.pdb b/x64/Debug/Final Project.pdb
+new file mode 100644
+index 0000000..ef7655a
+Binary files /dev/null and b/x64/Debug/Final Project.pdb differ
+diff --git a/x64/Debug/Final Project.tlog/CL.command.1.tlog b/x64/Debug/Final Project.tlog/CL.command.1.tlog
+new file mode 100644
+index 0000000..9d48dc7
+Binary files /dev/null and b/x64/Debug/Final Project.tlog/CL.command.1.tlog differ
+diff --git a/x64/Debug/Final Project.tlog/CL.read.1.tlog b/x64/Debug/Final Project.tlog/CL.read.1.tlog
+new file mode 100644
+index 0000000..418abb3
+Binary files /dev/null and b/x64/Debug/Final Project.tlog/CL.read.1.tlog differ
+diff --git a/x64/Debug/Final Project.tlog/CL.write.1.tlog b/x64/Debug/Final Project.tlog/CL.write.1.tlog
+new file mode 100644
+index 0000000..133932f
+Binary files /dev/null and b/x64/Debug/Final Project.tlog/CL.write.1.tlog differ
+diff --git a/x64/Debug/Final Project.tlog/Final Project.lastbuildstate b/x64/Debug/Final Project.tlog/Final Project.lastbuildstate
+new file mode 100644
+index 0000000..8b38596
+--- /dev/null
++++ b/x64/Debug/Final Project.tlog/Final Project.lastbuildstate	
+@@ -0,0 +1,2 @@
++PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.31.31103:TargetPlatformVersion=10.0.19041.0:
++Debug|x64|C:\Users\nguye\Documents\CPR101\Final Project\Final Project\|
+diff --git a/x64/Debug/Final Project.tlog/link.command.1.tlog b/x64/Debug/Final Project.tlog/link.command.1.tlog
+new file mode 100644
+index 0000000..5ac90bb
+Binary files /dev/null and b/x64/Debug/Final Project.tlog/link.command.1.tlog differ
+diff --git a/x64/Debug/Final Project.tlog/link.read.1.tlog b/x64/Debug/Final Project.tlog/link.read.1.tlog
+new file mode 100644
+index 0000000..7ea0b88
+Binary files /dev/null and b/x64/Debug/Final Project.tlog/link.read.1.tlog differ
+diff --git a/x64/Debug/Final Project.tlog/link.write.1.tlog b/x64/Debug/Final Project.tlog/link.write.1.tlog
+new file mode 100644
+index 0000000..f2e49e0
+Binary files /dev/null and b/x64/Debug/Final Project.tlog/link.write.1.tlog differ
+diff --git a/x64/Debug/Final Project.vcxproj.FileListAbsolute.txt b/x64/Debug/Final Project.vcxproj.FileListAbsolute.txt
+new file mode 100644
+index 0000000..f411f54
+--- /dev/null
++++ b/x64/Debug/Final Project.vcxproj.FileListAbsolute.txt	
+@@ -0,0 +1 @@
++C:\Users\nguye\Documents\CPR101\Final Project\Final Project\x64\Debug\Final Project.exe
+diff --git a/x64/Debug/tokenizing.obj b/x64/Debug/tokenizing.obj
+new file mode 100644
+index 0000000..683dee0
+Binary files /dev/null and b/x64/Debug/tokenizing.obj differ
+diff --git a/x64/Debug/vc143.idb b/x64/Debug/vc143.idb
+new file mode 100644
+index 0000000..896fcb0
+Binary files /dev/null and b/x64/Debug/vc143.idb differ
+diff --git a/x64/Debug/vc143.pdb b/x64/Debug/vc143.pdb
+new file mode 100644
+index 0000000..3649fa2
+Binary files /dev/null and b/x64/Debug/vc143.pdb differ
