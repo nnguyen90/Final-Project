@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c" />
-    <ClCompile Include="tokenizing.c" />
+    <ClInclude Include="tokenizing.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tokenizing.h" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="tokenizing_v3.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

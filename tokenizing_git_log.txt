@@ -1,33 +1,199 @@
-nguye@LAPTOP-1IUI7EAN MINGW64 ~/Documents/CPR101/Final Project/Final Project (master)
-$ git status
-On branch master
-Your branch is up to date with 'Final_Project/master'.
+commit d0b20202936108535966a53f1dcc216e25321afd
+Author: Thy <nguyen.thy2986@gmail.com>
+Date:   Fri Aug 12 22:50:13 2022 -0400
 
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   tokenizing_v2.c
-        modified:   tokenizing_v2.h
+    version_2
 
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        tokenizing version 2/
-        tokenizing_both_functions_separated.c
-        tokenizing_v2_combine 2 versions.c
+diff --git a/tokenizing_v2.c b/tokenizing_v2.c
+index 9984379..b5088bb 100644
+--- a/tokenizing_v2.c
++++ b/tokenizing_v2.c
+@@ -1,37 +1,67 @@
++/*
++-------------------------------------------------
++Full Name  : Ngoc Diem Thy Nguyen
++Student ID#: 105310221
++Email      : nnguyen90@myseneca.ca
++Section    : NEE
++-------------------------------------------------
++*/
++
++// TOKENIZING MODULE SOURCE VERSION 2
++
+ #define _CRT_SECURE_NO_WARNINGS // _CRT_SECURE_NO_WARNINGS means you don't want the compiler to suggest the secure versions of the library functions, e.g. scanf_s when you use scanf
+ #define BUFFER_SIZE 300
+-#include "tokenizing.h" // Include header file created as "tokenizing.h"
++#include "tokenizing_v2.h" // Include header file created as "tokenizing.h"
+ 
+-void tokenizing(void) {
+-	printf("*** Start of Tokenizing Words and Phrases Demo ***\n"); // print statement to tell the user about the Demo
+-	char* nextWord = NULL; // initialize nextWord with NULL
+-	int wordsCounter; // Declare wordsCounter Variable
+-	char phrases[BUFFER_SIZE]; // Declare phrases array
+-	char* nextPhrase = NULL; // initialize nextPhrase with NULL
+-	int phrasesCounter; // Declare phrasesCounter Variable
+-	do { // Start DO...WHILE Loop
+-		printf("\nType a few Phrases separated by comma with words separated by space (q - to quit):\n"); // print statement for asking user to type few phrases or q to quit
+-		fgets(phrases, BUFFER_SIZE, stdin); // gets input from user
+-		phrases[strlen(phrases) - 1] = '\0'; // put null at the end of user input
+-		if(strcmp(phrases, "q") != 0) { // check if phrases has q or not (To check whether user want to continue or terminate)
+-            char *p = strtok_r(phrases, ",", &nextPhrase); // used strtok_r() on phrases separated comma(i.e ",")
+-            phrasesCounter = 1; // Initialized phrasesCounter as 1
+-            wordsCounter = 1; // Initialized wordsCounter as 1
+-            while(p) { // start WHILE Loop to traverse nextPhrase separated by comma
+-                printf("Phrase #%d is \'%s\'\n", phrasesCounter++, p); // print different phrase in the sentence entered by user
+-                char *q = strtok_r(p, " ", &nextWord); // used strtok_r() on words separated by space(i.e " ")
+-                while(q) { // start WHILE Loop to traverse nextword separated by space
+-                    printf("\tword #%d is \'%s\'\n", wordsCounter++, q); // print different words in the phrase entered by user
+-                    q = strtok_r(NULL, " ",&nextWord); // check if there are any tokens left to retrieve
+-                }
+-                p = strtok_r(NULL, ",", &nextPhrase); // check if there are any tokens left to retrieve
+-            }
++void tokenizing(void) 
++{
++	printf("*** Start of Tokenizing Words Demo ***\n");
++	char* nextWord = NULL;
++	char words[BUFFER_SIZE];
++	int wordsCounter;
++	do 
++	{
++		printf("Type a few words separated by space (q - to quit):\n");
++		fgets(words, BUFFER_SIZE, stdin);
++		words[strlen(words) - 1] = '\0';
++		if (strcmp(words, "q") != 0) 
++		{
++			nextWord = strtok(words, " ");
++			wordsCounter = 1;
++			while (nextWord) 
++			{
++				printf("Word #%d is \'%s\'\n", wordsCounter++, nextWord);
++				nextWord = strtok(NULL, " ");
++			}
+ 		}
+-	} while(strcmp(phrases, "q") != 0); // DO...WHILE Loop end condition
+-	printf("*** End of Tokenizing Words and Phrases Demo ***\n\n"); // print statement for telling user the end of Demo
++	} while (strcmp(words, "q") != 0);
++	printf("*** End of Tokenizing Words Demo ***\n\n");
++
++	printf("*** Start of Tokenizing Phrases Demo ***\n");
++	char phrases[BUFFER_SIZE];
++	char* nextPhrase = NULL;
++	int phrasesCounter;
++	do 
++	{
++		printf("Type a few Phrases separated by comma (q - to quit):\n");
++		fgets(phrases, BUFFER_SIZE, stdin);
++		phrases[strlen(phrases) - 1] = '\0';
++		if (strcmp(phrases, "q") != 0) 
++		{
++			nextPhrase = strtok(phrases, ",");
++			phrasesCounter = 1;
++			while (nextPhrase)
++			{
++				printf("Phrase #%d is \'%s\'\n", phrasesCounter++, nextPhrase);
++				nextPhrase = strtok(NULL, ",");
++			}
++		}
++	} while (strcmp(phrases, "q") != 0);
++	printf("*** End of Tokenizing Phrases Demo ***\n\n");
+ }
+ 
+-//Uncomment below main() function to run the code and check for different inputs
+-int main() {
+-    tokenizing();
++
++int main() 
++{
++	tokenizing();
+ }
+diff --git a/tokenizing_v2.h b/tokenizing_v2.h
+index 231d73c..535b7f1 100644
+--- a/tokenizing_v2.h
++++ b/tokenizing_v2.h
+@@ -1,6 +1,15 @@
+-#ifndef _TOKENIZING_H_ // This prevent from the multiple inclusion of same header file multiple time.
+-#define _TOKENIZING_H_
+-#include <stdio.h> // The stdio.h header defines three variable types, several macros, and various functions for performing input and output
+-#include <string.h> // The string.h header defines one variable type, one macro, and various functions for manipulating arrays of characters
+-void tokenizing(void); // Function Declaration
++/*
++-------------------------------------------------
++Full Name  : Ngoc Diem Thy Nguyen
++Student ID#: 105310221
++Email      : nnguyen90@myseneca.ca
++Section    : NEE
++-------------------------------------------------
++*/
++
++#ifndef _TOKENIZING_V2_H_ // This prevent from the multiple inclusion of same header file multiple time.
++#define _TOKENIZING_V2_H_ 
++#include <stdio.h> 
++#include <string.h> 
++void tokenizing(void);
+ #endif
+diff --git a/tokenizing_v2.h.gch b/tokenizing_v2.h.gch
+new file mode 100644
+index 0000000..78962c2
+Binary files /dev/null and b/tokenizing_v2.h.gch differ
 
-no changes added to commit (use "git add" and/or "git commit -a")
-
-nguye@LAPTOP-1IUI7EAN MINGW64 ~/Documents/CPR101/Final Project/Final Project (master)
-$ git log
-commit f64bf9d2510a54c5781d9a205fa8c25ab52b2c28 (HEAD -> master, Final_Project/master)
+commit f64bf9d2510a54c5781d9a205fa8c25ab52b2c28
 Author: Thy <nguyen.thy2986@gmail.com>
 Date:   Thu Aug 11 13:09:39 2022 -0400
 
     version_2
 
-commit 29ad9a407ae67e3d662c30eac36ab48ab355a36e
-Author: Thy <nguyen.thy2986@gmail.com>
-Date:   Wed Aug 3 11:22:05 2022 -0400
-
-    “version_1”
-
+diff --git a/tokenizing_v2.c b/tokenizing_v2.c
+new file mode 100644
+index 0000000..9984379
+--- /dev/null
++++ b/tokenizing_v2.c
+@@ -0,0 +1,37 @@
++#define _CRT_SECURE_NO_WARNINGS // _CRT_SECURE_NO_WARNINGS means you don't want the compiler to suggest the secure versions of the library functions, e.g. scanf_s when you use scanf
++#define BUFFER_SIZE 300
++#include "tokenizing.h" // Include header file created as "tokenizing.h"
++
++void tokenizing(void) {
++	printf("*** Start of Tokenizing Words and Phrases Demo ***\n"); // print statement to tell the user about the Demo
++	char* nextWord = NULL; // initialize nextWord with NULL
++	int wordsCounter; // Declare wordsCounter Variable
++	char phrases[BUFFER_SIZE]; // Declare phrases array
++	char* nextPhrase = NULL; // initialize nextPhrase with NULL
++	int phrasesCounter; // Declare phrasesCounter Variable
++	do { // Start DO...WHILE Loop
++		printf("\nType a few Phrases separated by comma with words separated by space (q - to quit):\n"); // print statement for asking user to type few phrases or q to quit
++		fgets(phrases, BUFFER_SIZE, stdin); // gets input from user
++		phrases[strlen(phrases) - 1] = '\0'; // put null at the end of user input
++		if(strcmp(phrases, "q") != 0) { // check if phrases has q or not (To check whether user want to continue or terminate)
++            char *p = strtok_r(phrases, ",", &nextPhrase); // used strtok_r() on phrases separated comma(i.e ",")
++            phrasesCounter = 1; // Initialized phrasesCounter as 1
++            wordsCounter = 1; // Initialized wordsCounter as 1
++            while(p) { // start WHILE Loop to traverse nextPhrase separated by comma
++                printf("Phrase #%d is \'%s\'\n", phrasesCounter++, p); // print different phrase in the sentence entered by user
++                char *q = strtok_r(p, " ", &nextWord); // used strtok_r() on words separated by space(i.e " ")
++                while(q) { // start WHILE Loop to traverse nextword separated by space
++                    printf("\tword #%d is \'%s\'\n", wordsCounter++, q); // print different words in the phrase entered by user
++                    q = strtok_r(NULL, " ",&nextWord); // check if there are any tokens left to retrieve
++                }
++                p = strtok_r(NULL, ",", &nextPhrase); // check if there are any tokens left to retrieve
++            }
++		}
++	} while(strcmp(phrases, "q") != 0); // DO...WHILE Loop end condition
++	printf("*** End of Tokenizing Words and Phrases Demo ***\n\n"); // print statement for telling user the end of Demo
++}
++
++//Uncomment below main() function to run the code and check for different inputs
++int main() {
++    tokenizing();
++}
+diff --git a/tokenizing_v2.h b/tokenizing_v2.h
+new file mode 100644
+index 0000000..231d73c
+--- /dev/null
++++ b/tokenizing_v2.h
+@@ -0,0 +1,6 @@
++#ifndef _TOKENIZING_H_ // This prevent from the multiple inclusion of same header file multiple time.
++#define _TOKENIZING_H_
++#include <stdio.h> // The stdio.h header defines three variable types, several macros, and various functions for performing input and output
++#include <string.h> // The string.h header defines one variable type, one macro, and various functions for manipulating arrays of characters
++void tokenizing(void); // Function Declaration
++#endif
